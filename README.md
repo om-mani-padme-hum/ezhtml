@@ -1,4 +1,4 @@
-# JS HTML v0.1.0
+# Tidy HTML v0.1.0
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  Outputs clean, formatted code, making it easy to troubleshoot errors.

@@ -109,10 +109,10 @@ const video = require('./video');
 const wordBreakOpportunity = require('./word-break-opportunity');
 
 /** 
- * @module jshtml
+ * @module tidy-html
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
- * @description A simple library for programatically rendering HTML and inline JavaScript using JavaScript.
+ * @description A simple library for programatically rendering HTML and client-side JavaScript using Node.js.
  */
 module.exports.Abbreviation = abbreviation.Abbreviation;
 module.exports.Address = address.Address;
