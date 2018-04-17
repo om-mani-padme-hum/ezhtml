@@ -1,5 +1,5 @@
 {
-  "name": "tidy-html",
+  "name": "ezhtml",
   "version": "0.1.2",
   "description": "Tidy HTML and Client-side JavaScript using Node.js",
   "main": "index.js",
