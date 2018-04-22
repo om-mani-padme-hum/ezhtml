@@ -38,12 +38,12 @@ class Anchor extends containerElement.ContainerElement {
    * @returns string
    * @description Gets the filename of the file that should be downloaded upon clicking this link.
    *
-   * @signature download(download)
+   * @signature download(filename)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param download string
+   * @param filename string
    * @returns this
-   * @throws TypeError if `download` is not a valid [string]
+   * @throws TypeError if `filename` is not a valid [string]
    * @description Sets the filename of the file that should be downloaded upon clicking this link.
    */
   download(arg1) {
