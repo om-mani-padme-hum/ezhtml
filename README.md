@@ -1,4 +1,4 @@
-# EZHTML v0.2.3
+# EZHTML v0.2.4
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  Outputs clean, formatted code, making it easy to troubleshoot errors.
@@ -32,7 +32,7 @@ app.get('/', (req, res, nex) => {
   html.append(body);
                                  
   body.append(new ezhtml.Heading().rank(2).text('My Example EZHTML Page'));
-  body.append(new ezhtml.Paragraph().addClass('my-class').text('This is the first paragraph of my page.));
+  body.append(new ezhtml.Paragraph().addClass('my-class').text('This is the first paragraph of my page.'));
                                                                
   res.send(html.render());
 });
