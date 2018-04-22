@@ -29,6 +29,6 @@
     }
   },
   "devDependencies": {
-    "docket-parser": "^0.6.2"
+    "docket-parser": "^0.6.4"
   }
 }

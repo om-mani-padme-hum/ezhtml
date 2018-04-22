@@ -20,7 +20,7 @@ const fileList = ['index.js', 'abbreviation.js', 'address.js', 'anchor.js', 'are
                   'text.js', 'time.js', 'title.js', 'track.js', 'underline.js', 'unordered-list.js', 'variable.js', 
                   'video.js', 'word-break-opportunity.js', ];
 
-docket.title('EZHTML v0.2.0 Documentation');
-
+docket.title('EZHTML v0.2.1 Documentation');
+docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
