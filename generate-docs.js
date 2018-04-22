@@ -1,26 +1,26 @@
 const docket = require('docket-parser');
 
-const fileList = ['index.js', 'abbreviation.js', 'address.js', 'anchor.js', 'area.js', 'article.js', 'aside.js', 
-                  'audio.js', 'base.js', 'bidirectional-isolation.js', 'bidirectional-override.js', 
-                  'blockquote.js', 'body.js', 'bold.js', 'button.js', 'canvas.js', 'caption.js', 
-                  'child.js', 'citation.js', 'code.js', 'column-group.js', 'column.js', 'container-element.js', 
-                  'container.js', 'data-list.js', 'definition-description.js', 'definition-list.js', 
-                  'definition-term.js', 'definition.js', 'deleted.js', 'details.js', 'dialog.js', 'div.js', 
-                  'element.js', 'embed.js', 'emphasized.js', 'fieldset.js', 'figure-caption.js', 'figure.js', 
-                  'footer.js', 'form.js', 'head.js', 'header.js', 'heading-group.js', 'heading.js', 
-                  'horizontal-rule.js', 'html.js', 'image.js', 'input.js', 'inserted.js', 
-                  'italic.js', 'keyboard.js', 'label.js', 'legend.js', 'line-break.js', 'link.js', 
-                  'list-item.js', 'main.js', 'map.js', 'mark.js', 'menu-item.js', 'menu.js', 'meta.js', 
-                  'meter.js', 'multimedia-object.js', 'nav.js', 'no-script.js', 'option-group.js', 'option.js', 
-                  'ordered-list.js', 'output.js', 'paragraph.js', 'param.js', 'picture.js', 'preformatted-text.js', 
-                  'progress.js', 'quotation.js', 'sample.js', 'script.js', 'section.js', 'select.js', 'small.js', 
-                  'source.js', 'span.js', 'strikethrough.js', 'strong.js', 'style.js', 'subscript.js', 
-                  'summary.js', 'superscript.js', 'svg.js', 'table-body.js', 'table-data.js', 'table-footer.js', 
-                  'table-head.js', 'table-header.js', 'table-row.js', 'table.js', 'template.js', 'text-area.js', 
-                  'text.js', 'time.js', 'title.js', 'track.js', 'underline.js', 'unordered-list.js', 'variable.js', 
-                  'video.js', 'word-break-opportunity.js', ];
+const fileList = ['index.js', 'elements/abbreviation.js', 'elements/address.js', 'elements/anchor.js', 'elements/area.js', 'elements/article.js', 'elements/aside.js', 
+                  'elements/audio.js', 'elements/base.js', 'elements/bidirectional-isolation.js', 'elements/bidirectional-override.js', 
+                  'elements/blockquote.js', 'elements/body.js', 'elements/bold.js', 'elements/button.js', 'elements/canvas.js', 'elements/caption.js', 
+                  'elements/child.js', 'elements/citation.js', 'elements/code.js', 'elements/column-group.js', 'elements/column.js', 'elements/container-element.js', 
+                  'elements/container.js', 'elements/data-list.js', 'elements/definition-description.js', 'elements/definition-list.js', 
+                  'elements/definition-term.js', 'elements/definition.js', 'elements/deleted.js', 'elements/details.js', 'elements/dialog.js', 'elements/div.js', 
+                  'elements/element.js', 'elements/embed.js', 'elements/emphasized.js', 'elements/fieldset.js', 'elements/figure-caption.js', 'elements/figure.js', 
+                  'elements/footer.js', 'elements/form.js', 'elements/head.js', 'elements/header.js', 'elements/heading-group.js', 'elements/heading.js', 
+                  'elements/horizontal-rule.js', 'elements/html.js', 'elements/image.js', 'elements/input.js', 'elements/inserted.js', 
+                  'elements/italic.js', 'elements/keyboard.js', 'elements/label.js', 'elements/legend.js', 'elements/line-break.js', 'elements/link.js', 
+                  'elements/list-item.js', 'elements/main.js', 'elements/map.js', 'elements/mark.js', 'elements/menu-item.js', 'elements/menu.js', 'elements/meta.js', 
+                  'elements/meter.js', 'elements/multimedia-object.js', 'elements/nav.js', 'elements/no-script.js', 'elements/option-group.js', 'elements/option.js', 
+                  'elements/ordered-list.js', 'elements/output.js', 'elements/paragraph.js', 'elements/param.js', 'elements/picture.js', 'elements/preformatted-text.js', 
+                  'elements/progress.js', 'elements/quotation.js', 'elements/sample.js', 'elements/script.js', 'elements/section.js', 'elements/select.js', 'elements/small.js', 
+                  'elements/source.js', 'elements/span.js', 'elements/strikethrough.js', 'elements/strong.js', 'elements/style.js', 'elements/subscript.js', 
+                  'elements/summary.js', 'elements/superscript.js', 'elements/svg.js', 'elements/table-body.js', 'elements/table-data.js', 'elements/table-footer.js', 
+                  'elements/table-head.js', 'elements/table-header.js', 'elements/table-row.js', 'elements/table.js', 'elements/template.js', 'elements/text-area.js', 
+                  'elements/text.js', 'elements/time.js', 'elements/title.js', 'elements/track.js', 'elements/underline.js', 'elements/unordered-list.js', 'elements/variable.js', 
+                  'elements/video.js', 'elements/word-break-opportunity.js', ];
 
-docket.title('EZHTML v0.2.4 Documentation');
+docket.title('EZHTML v0.2.5 Documentation');
 docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
