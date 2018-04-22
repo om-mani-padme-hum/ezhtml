@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Audio
+ * @class ezhtml.Audio
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML audio elements.
@@ -31,139 +32,205 @@ class Audio extends containerElement.ContainerElement {
   }
   
   /**
-   * Autoplay boolean getter/setter.
-   * @signature autoplay() Get the autoplay boolean
-   * @signature autoplay(boolean) Set the autoplay boolean as (boolean)
-   * @return This object for call chaining
+   * @signature autoplay()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the audio should start playing as soon as it is ready.
+   *
+   * @signature autoplay(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the audio should start playing as soon as it is ready.
    */
   autoplay(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._autoplay;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._autoplay = arg1; 
-    
+      this._autoplay = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.autoplay(null): Invalid signature.`);
     else
-      throw new TypeError(`Audio.autoplay(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.autoplay(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Controls boolean getter/setter.
-   * @signature controls() Get the controls boolean
-   * @signature controls(boolean) Set the controls boolean as (boolean)
-   * @return This object for call chaining
+   * @signature controls()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the audio controls should be displayed.
+   *
+   * @signature controls(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the audio controls should be displayed.
    */
   controls(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._controls;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._controls = arg1; 
-    
+      this._controls = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.controls(null): Invalid signature.`);
     else
-      throw new TypeError(`Audio.controls(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.controls(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Loop boolean getter/setter.
-   * @signature loop() Get the loop boolean
-   * @signature loop(boolean) Set the loop boolean as (boolean)
-   * @return This object for call chaining
+   * @signature loop()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the audio should start over again, every time it is finished.
+   *
+   * @signature loop(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the audio should start over again, every time it is finished.
    */
   loop(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._loop;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._loop = arg1; 
-    
+      this._loop = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.loop(null): Invalid signature.`);
     else
-      throw new TypeError(`Audio.loop(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.loop(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Muted boolean getter/setter.
-   * @signature muted() Get the muted boolean
-   * @signature muted(boolean) Set the muted boolean as (boolean)
-   * @return This object for call chaining
+   * @signature muted()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the audio output should be muted.
+   *
+   * @signature muted(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the audio output should be muted.
    */
   muted(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._muted;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._muted = arg1; 
-    
+      this._muted = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.muted(null): Invalid signature.`);
     else
-      throw new TypeError(`Audio.muted(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.muted(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Preload setting getter/setter.
-   * @signature preload() Get the preload setting
-   * @signature preload(string) Set the preload setting as (string)
-   * @return This object for call chaining
+   * @signature preload()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the preferred method for loading the audio.
+   *
+   * @signature preload(method)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param method string
+   * @returns this
+   * @throws TypeError if `method` is not a valid [string]
+   * @description Sets the preferred method for loading the audio.
    */
   preload(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._preload;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._preload = arg1; 
-    
+      this._preload = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.preload(null): Invalid signature.`);
     else
-      throw new TypeError(`Audio.preload(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.preload(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source getter/setter.
-   * @signature src() Get the source
-   * @signature src(string) Set the source as (string)
-   * @return This object for call chaining
+   * @signature src()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of the audio file.
+   *
+   * @signature src(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of the audio file.
    */
   src(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._src;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._src = arg1; 
-    
+      this._src = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.src(null): Invalid signature.`);
     else
-      throw new TypeError(`Audio.src(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.src(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

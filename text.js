@@ -2,9 +2,10 @@
 const child = require('./child');
 
 /**
- * @class Text
+ * @class ezhtml.Text
  * @extends Child
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering plain text in HTML elements.
@@ -25,24 +26,35 @@ class Text extends child.Child {
   }
   
   /**
-   * Text getter/setter.
-   * @signature text() Get the text
-   * @signature text(string|number) Set the text as (string|number)
-   * @return This object for call chaining
+   * @signature text()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the plain text content of this text pseudo-element.
+   *
+   * @signature text(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Sets the plain text content of this text pseudo-element.
    */
   text(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._text;
-    
+
     /** Setter */
-    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
-      this._text = arg1.toString(); 
-    
+    else if ( typeof arg1 == 'string' )
+      this._text = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.text(null): Invalid signature.`);
     else
-      throw new TypeError(`Text.text(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.text(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

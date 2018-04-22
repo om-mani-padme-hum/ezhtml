@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Anchor
+ * @class ezhtml.Anchor
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML anchor elements.
@@ -31,162 +32,239 @@ class Anchor extends containerElement.ContainerElement {
   }
   
   /**
-   * Download filename getter/setter.
-   * @signature download() Get the download filename
-   * @signature download(string) Set the download filename as (string)
-   * @return This object for call chaining
+   * @signature download()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the filename of the file that should be downloaded upon clicking this link.
+   *
+   * @signature download(download)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param download string
+   * @returns this
+   * @throws TypeError if `download` is not a valid [string]
+   * @description Sets the filename of the file that should be downloaded upon clicking this link.
    */
   download(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._download;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._download = arg1; 
-    
+      this._download = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.download(null): Invalid signature.`);
     else
-      throw new TypeError(`Anchor.download(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.download(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Hyperlink reference getter/setter.
-   * @signature href() Get the hyperlink reference
-   * @signature href(string) Set the hyperlink reference as (string)
-   * @return This object for call chaining
+   * @signature href()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the url the link goes to.
+   *
+   * @signature href(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the url the link goes to.
    */
   href(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._href;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._href = arg1; 
-    
+      this._href = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.href(null): Invalid signature.`);
     else
-      throw new TypeError(`Anchor.href(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.href(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Hyperlink language getter/setter.
-   * @signature hreflang() Get the hyperlink language
-   * @signature hreflang(string) Set the hyperlink language as (string)
-   * @return This object for call chaining
+   * @signature hreflang()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the language of the linked document.
+   *
+   * @signature hreflang(lang)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param lang string
+   * @returns this
+   * @throws TypeError if `lang` is not a valid [string]
+   * @description Sets the language of the linked document.
    */
   hreflang(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._hreflang;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._hreflang = arg1; 
-    
+      this._hreflang = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.hreflang(null): Invalid signature.`);
     else
-      throw new TypeError(`Anchor.hreflang(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.hreflang(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Media getter/setter.
-   * @signature media() Get the media
-   * @signature media(string) Set the media as (string)
-   * @return This object for call chaining
+   * @signature media()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the media device that the linked document is optimized for.
+   *
+   * @signature media(device)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param device string
+   * @returns this
+   * @throws TypeError if `device` is not a valid [string]
+   * @description Sets the media device that the linked document is optimized for.
    */
   media(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._media;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._media = arg1; 
-    
+      this._media = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.media(null): Invalid signature.`);
     else
-      throw new TypeError(`Anchor.media(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.media(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Relationship getter/setter.
-   * @signature rel() Get the relationship
-   * @signature rel(string) Set the relationship as (string)
-   * @return This object for call chaining
+   * @signature rel()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the relationship between the current document and the linked document.
+   *
+   * @signature rel(relationship)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param relationship string
+   * @returns this
+   * @throws TypeError if `relationship` is not a valid [string]
+   * @description Sets the relationship between the current document and the linked document.
    */
   rel(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._rel;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._rel = arg1; 
-    
+      this._rel = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.rel(null): Invalid signature.`);
     else
-      throw new TypeError(`Anchor.rel(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.rel(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Target getter/setter.
-   * @signature target() Get the target
-   * @signature target(string) Set the target as (string)
-   * @return This object for call chaining
+   * @signature target()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the method used to open the linked document.
+   *
+   * @signature target(method)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param method string
+   * @returns this
+   * @throws TypeError if `method` is not a valid [string]
+   * @description Sets the method used to open the linked document.
    */
   target(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._target;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._target = arg1; 
-    
+      this._target = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.target(null): Invalid signature.`);
     else
-      throw new TypeError(`Anchor.target(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.target(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the media type of the linked document.
+   *
+   * @signature type(media)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param media string
+   * @returns this
+   * @throws TypeError if `media` is not a valid [string]
+   * @description Sets the media type of the linked document.
    */
   type(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._type;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._type = arg1; 
-    
+      this._type = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
     else
-      throw new TypeError(`Anchor.type(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

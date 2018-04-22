@@ -2,9 +2,10 @@
 const element = require('./element');
 
 /**
- * @class Embed
+ * @class ezhtml.Embed
  * @extends ContainerElement
  * @added v0.1.0
+ * @added v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML embed elements.
@@ -28,93 +29,137 @@ class Embed extends element.Element {
   }
   
   /**
-   * Height getter/setter.
-   * @signature height() Get the height
-   * @signature height(number) Set the height as (number)
-   * @return This object for call chaining
+   * @signature height()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the height of the embedded content.
+   *
+   * @signature height(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the height of the embedded content.
    */
   height(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._height;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._height = arg1; 
-    
+      this._height = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.height(null): Invalid signature.`);
     else
-      throw new TypeError(`Embed.height(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.height(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source getter/setter.
-   * @signature src() Get the source
-   * @signature src(string) Set the source as (string)
-   * @return This object for call chaining
+   * @signature src()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of the external file to embed.
+   *
+   * @signature src(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of the external file to embed.
    */
   src(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._src;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._src = arg1; 
-    
+      this._src = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.src(null): Invalid signature.`);
     else
-      throw new TypeError(`Embed.src(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.src(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
-   */
-  type(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._type;
-    
-    /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._type = arg1; 
-    
-    /** Handle errors */
-    else
-      throw new TypeError(`Embed.type(): Invalid signature (${typeof arg1}).`);
-    
-    /** Allow for call chaining */
-    return this;
-  }
-  
-  /**
-   * Width getter/setter.
-   * @signature width() Get the width
-   * @signature width(number) Set the width as (number)
-   * @return This object for call chaining
+   * @signature width()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the width of the embedded content.
+   *
+   * @signature width(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the width of the embedded content.
    */
   width(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._width;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._width = arg1; 
-    
+      this._width = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.width(null): Invalid signature.`);
     else
-      throw new TypeError(`Embed.width(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.width(${arg1.constructor.name}): Invalid signature.`);
+
+    /** Allow for call chaining */
+    return this;
+  }
+
+  /**
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the media type of the embedded content.
+   *
+   * @signature type(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets the media type of the embedded content.
+   */
+  type(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._type;
+
+    /** Setter */
+    else if ( typeof arg1 == 'string' )
+      this._type = arg1;
+
+    /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
+    else
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

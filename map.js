@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Map
+ * @class ezhtml.Map
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML map elements.
@@ -26,24 +27,35 @@ class Map extends containerElement.ContainerElement {
   }
   
   /**
-   * Name getter/setter.
-   * @signature name() Get the name
-   * @signature name(string) Set the name as (string)
-   * @return This object for call chaining
+   * @signature name()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of this map.
+   *
+   * @signature name(name)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param name string
+   * @returns this
+   * @throws TypeError if `name` is not a valid [string]
+   * @description Sets the name of this map.
    */
   name(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._name;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._name = arg1; 
-    
+      this._name = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.name(null): Invalid signature.`);
     else
-      throw new TypeError(`Map.name(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.name(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

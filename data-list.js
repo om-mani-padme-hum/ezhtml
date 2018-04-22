@@ -2,7 +2,7 @@
 const containerElement = require('./container-element');
 
 /**
- * @class DataList
+ * @class ezhtml.DataList
  * @extends ContainerElement
  * @added v0.1.0
  * @author Rich Lowe

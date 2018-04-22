@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Quotation
+ * @class ezhtml.Quotation
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML quotation elements.
@@ -26,24 +27,35 @@ class Quotation extends containerElement.ContainerElement {
   }
   
   /**
-   * Citation getter/setter.
-   * @signature cite() Get the citation
-   * @signature cite(string) Set the citation as (string)
-   * @return This object for call chaining
+   * @signature cite()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets a URL to the source of the quotation.
+   *
+   * @signature cite(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets a URL to the source of the quotation.
    */
   cite(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._cite;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._cite = arg1; 
-    
+      this._cite = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.cite(null): Invalid signature.`);
     else
-      throw new TypeError(`Quotation.cite(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.cite(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

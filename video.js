@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Video
+ * @class ezhtml.Video
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML video elements.
@@ -34,208 +35,307 @@ class Video extends containerElement.ContainerElement {
   }
   
   /**
-   * Autoplay boolean getter/setter.
-   * @signature autoplay() Get the autoplay boolean
-   * @signature autoplay(boolean) Set the autoplay boolean as (boolean)
-   * @return This object for call chaining
+   * @signature autoplay()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the video should start playing as soon as it is ready.
+   *
+   * @signature autoplay(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the video should start playing as soon as it is ready.
    */
   autoplay(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._autoplay;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._autoplay = arg1; 
-    
+      this._autoplay = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.autoplay(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.autoplay(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.autoplay(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Controls boolean getter/setter.
-   * @signature controls() Get the controls boolean
-   * @signature controls(boolean) Set the controls boolean as (boolean)
-   * @return This object for call chaining
+   * @signature controls()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the video controls should be displayed.
+   *
+   * @signature controls(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the video controls should be displayed.
    */
   controls(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._controls;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._controls = arg1; 
-    
+      this._controls = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.controls(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.controls(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.controls(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Height getter/setter.
-   * @signature height() Get the height
-   * @signature height(number) Set the height as (number)
-   * @return This object for call chaining
+   * @signature height()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the height of the video in pixels.
+   *
+   * @signature height(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the height of the video in pixels.
    */
   height(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._height;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._height = arg1; 
-    
+      this._height = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.height(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.height(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.height(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Loop boolean getter/setter.
-   * @signature loop() Get the loop boolean
-   * @signature loop(boolean) Set the loop boolean as (boolean)
-   * @return This object for call chaining
+   * @signature loop()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the video should start over again, every time it is finished.
+   *
+   * @signature loop(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the video should start over again, every time it is finished.
    */
   loop(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._loop;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._loop = arg1; 
-    
+      this._loop = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.loop(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.loop(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.loop(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Muted boolean getter/setter.
-   * @signature muted() Get the muted boolean
-   * @signature muted(boolean) Set the muted boolean as (boolean)
-   * @return This object for call chaining
+   * @signature muted()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the video output should be muted.
+   *
+   * @signature muted(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the video output should be muted.
    */
   muted(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._muted;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._muted = arg1; 
-    
+      this._muted = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.muted(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.muted(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.muted(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Poster getter/setter.
-   * @signature poster() Get the poster
-   * @signature poster(string) Set the poster as (string)
-   * @return This object for call chaining
+   * @signature poster()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of an image to be shown while the video is downloading, or until the user hits the play button.
+   *
+   * @signature poster(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of an image to be shown while the video is downloading, or until the user hits the play button.
    */
   poster(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._poster;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._poster = arg1; 
-    
+      this._poster = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.poster(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.poster(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.poster(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Preload setting getter/setter.
-   * @signature preload() Get the preload setting
-   * @signature preload(string) Set the preload setting as (string)
-   * @return This object for call chaining
+   * @signature preload()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the preferred method for loading the video.
+   *
+   * @signature preload(method)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param method string
+   * @returns this
+   * @throws TypeError if `method` is not a valid [string]
+   * @description Sets the preferred method for loading the video.
    */
   preload(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._preload;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._preload = arg1; 
-    
+      this._preload = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.preload(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.preload(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.preload(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source getter/setter.
-   * @signature src() Get the source
-   * @signature src(string) Set the source as (string)
-   * @return This object for call chaining
+   * @signature src()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of the video file.
+   *
+   * @signature src(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of the video file.
    */
   src(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._src;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._src = arg1; 
-    
+      this._src = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.src(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.src(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.src(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Width getter/setter.
-   * @signature width() Get the width
-   * @signature width(number) Set the width as (number)
-   * @return This object for call chaining
+   * @signature width()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the width of the video in pixels.
+   *
+   * @signature width(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the width of the video in pixels.
    */
   width(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._width;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._width = arg1; 
-    
+      this._width = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.width(null): Invalid signature.`);
     else
-      throw new TypeError(`Video.width(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.width(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

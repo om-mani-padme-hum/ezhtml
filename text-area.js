@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class TextArea
+ * @class ezhtml.TextArea
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML text area elements.
@@ -37,277 +38,409 @@ class TextArea extends containerElement.ContainerElement {
   }
   
   /**
-   * Auto-focus boolean getter/setter.
-   * @signature autofocus() Get the auto-focus boolean
-   * @signature autofocus(boolean) Set the auto-focus boolean as (boolean)
-   * @return This object for call chaining
+   * @signature autofocus()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the text area should automatically get focus when the page loads.
+   *
+   * @signature autofocus(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the text area should automatically get focus when the page loads.
    */
   autofocus(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._autofocus;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._autofocus = arg1; 
-    
+      this._autofocus = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.autofocus(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.autofocus(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.autofocus(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Columns getter/setter.
-   * @signature cols() Get the columns
-   * @signature cols(number) Set the columns as (number)
-   * @return This object for call chaining
+   * @signature cols()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the number of characters per row in the text area.
+   *
+   * @signature cols(columns)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param columns number
+   * @returns this
+   * @throws TypeError if `columns` is not a valid [number]
+   * @description Sets the number of characters per row in the text area.
    */
   cols(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._cols;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._cols = arg1; 
-    
+      this._cols = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.cols(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.cols(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.cols(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Text direction getter/setter.
-   * @signature dirname() Get the text direction
-   * @signature dirname(string) Set the text direction as (string)
-   * @return This object for call chaining
+   * @signature dirname()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the direction of the text that will be submitted.
+   *
+   * @signature dirname(dir)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param dir string
+   * @returns this
+   * @throws TypeError if `dir` is not a valid [string]
+   * @description Sets the direction of the text that will be submitted.
    */
   dirname(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._dirname;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._dirname = arg1; 
-    
+      this._dirname = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.dirname(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.dirname(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.dirname(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Disabled boolean getter/setter.
-   * @signature disabled() Get the disabled boolean
-   * @signature disabled(boolean) Set the disabled boolean as (boolean)
-   * @return This object for call chaining
+   * @signature disabled()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the text area should be disabled.
+   *
+   * @signature disabled(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the text area should be disabled.
    */
   disabled(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._disabled;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._disabled = arg1; 
-    
+      this._disabled = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.disabled(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.disabled(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.disabled(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Form getter/setter.
-   * @signature form() Get the form
-   * @signature form(string) Set the form as (string)
-   * @return This object for call chaining
+   * @signature form()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the id of the form that the text area belongs to.
+   *
+   * @signature form(formId)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param formId string
+   * @returns this
+   * @throws TypeError if `formId` is not a valid [string]
+   * @description Sets the id of the form that the text area belongs to.
    */
   form(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._form;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._form = arg1; 
-    
+      this._form = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.form(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.form(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.form(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Max length getter/setter.
-   * @signature maxlength() Get the max length
-   * @signature maxlength(number) Set the max length as (number)
-   * @return This object for call chaining
+   * @signature maxlength()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the maximum length of characters allowed for ths input.
+   *
+   * @signature maxlength(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value string
+   * @returns this
+   * @throws TypeError if `value` is not a valid [string]
+   * @description Sets the maximum length of characters allowed for ths input.
    */
   maxlength(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._maxlength;
-    
+
     /** Setter */
-    else if ( typeof arg1 == 'number' )
-      this._maxlength = arg1; 
-    
+    else if ( typeof arg1 == 'string' )
+      this._maxlength = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.maxlength(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.maxlength(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.maxlength(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Name getter/setter.
-   * @signature name() Get the name
-   * @signature name(string) Set the name as (string)
-   * @return This object for call chaining
+   * @signature name()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the text area.
+   *
+   * @signature name(name)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param name string
+   * @returns this
+   * @throws TypeError if `name` is not a valid [string]
+   * @description Sets the name of the text area.
    */
   name(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._name;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._name = arg1; 
-    
+      this._name = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.name(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.name(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.name(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Placeholder getter/setter.
-   * @signature placeholder() Get the placeholder
-   * @signature placeholder(string) Set the placeholder as (string)
-   * @return This object for call chaining
+   * @signature placeholder()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the placeholder value for ths text area.
+   *
+   * @signature placeholder(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value string
+   * @returns this
+   * @throws TypeError if `value` is not a valid [string]
+   * @description Sets the placeholder value for ths text area.
    */
   placeholder(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._placeholder;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._placeholder = arg1; 
-    
+      this._placeholder = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.placeholder(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.placeholder(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.placeholder(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Read-only boolean getter/setter.
-   * @signature readonly() Get the read-only boolean
-   * @signature readonly(boolean) Set the read-only boolean as (boolean)
-   * @return This object for call chaining
+   * @signature readonly()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this text area is read only.
+   *
+   * @signature readonly(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this text area is read only.
    */
   readonly(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._readonly;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._readonly = arg1; 
-    
+      this._readonly = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.readonly(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.readonly(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.readonly(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Required boolean getter/setter.
-   * @signature required() Get the required boolean
-   * @signature required(boolean) Set the required boolean as (boolean)
-   * @return This object for call chaining
+   * @signature required()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this text area is required.
+   *
+   * @signature required(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this text area is required.
    */
   required(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._required;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._required = arg1; 
-    
+      this._required = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.required(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.required(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.required(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Rows getter/setter.
-   * @signature rows() Get the rows
-   * @signature rows(number) Set the rows as (number)
-   * @return This object for call chaining
+   * @signature rows()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the number of rows that should be visible in this text area at any given time.
+   *
+   * @signature rows(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the number of rows that should be visible in this text area at any given time.
    */
   rows(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._rows;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._rows = arg1; 
-    
+      this._rows = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.rows(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.rows(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.rows(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Wrap type getter/setter.
-   * @signature wrap() Get the wrap type
-   * @signature wrap(string) Set the wrap type as (string)
-   * @return This object for call chaining
+   * @signature wrap()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the type of text wrapping to be used in the text area, can be `hard` or `soft`.
+   *
+   * @signature wrap(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets the type of text wrapping to be used in the text area, can be `hard` or `soft`.
    */
   wrap(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._wrap;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._wrap = arg1; 
-    
+      this._wrap = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.wrap(null): Invalid signature.`);
     else
-      throw new TypeError(`TextArea.wrap(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.wrap(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

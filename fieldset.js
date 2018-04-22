@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class FieldSet
+ * @class ezhtml.FieldSet
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML field set elements.
@@ -26,71 +27,104 @@ class FieldSet extends containerElement.ContainerElement {
     this.name(data.name || '');
   }
   
-  /**
-   * Disabled boolean getter/setter.
-   * @signature disabled() Get the disabled boolean
-   * @signature disabled(boolean) Set the disabled boolean as (boolean)
-   * @return This object for call chaining
+    /**
+   * @signature disabled()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this set of form elements should be disabled.
+   *
+   * @signature disabled(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this set of form elements should be disabled.
    */
   disabled(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._disabled;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._disabled = arg1; 
-    
+      this._disabled = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.disabled(null): Invalid signature.`);
     else
-      throw new TypeError(`FieldSet.disabled(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.disabled(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Form getter/setter.
-   * @signature form() Get the form
-   * @signature form(string) Set the form as (string)
-   * @return This object for call chaining
+   * @signature form()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the form ID that this field set belongs to.
+   *
+   * @signature form(formId)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param formId string
+   * @returns this
+   * @throws TypeError if `formId` is not a valid [string]
+   * @description Sets the form ID that this field set belongs to.
    */
   form(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._form;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._form = arg1; 
-    
+      this._form = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.form(null): Invalid signature.`);
     else
-      throw new TypeError(`FieldSet.form(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.form(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Name getter/setter.
-   * @signature name() Get the name
-   * @signature name(string) Set the name as (string)
-   * @return This object for call chaining
+   * @signature name()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the field set.
+   *
+   * @signature name(name)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param name string
+   * @returns this
+   * @throws TypeError if `name` is not a valid [string]
+   * @description Sets the name of the field set.
    */
   name(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._name;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._name = arg1; 
-    
+      this._name = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.name(null): Invalid signature.`);
     else
-      throw new TypeError(`FieldSet.name(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.name(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

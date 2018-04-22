@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class BidirectionalOverride
+ * @class ezhtml.BidirectionalOverride
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML bi-directional override elements.
@@ -26,24 +27,35 @@ class BidirectionalOverride extends containerElement.ContainerElement {
   }
   
   /**
-   * Direction getter/setter.
-   * @signature dir() Get the direction
-   * @signature dir(string) Set the direction as (string)
-   * @return This object for call chaining
+   * @signature dir()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the text direction.
+   *
+   * @signature dir(direction)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param direction string
+   * @returns this
+   * @throws TypeError if `direction` is not a valid [string]
+   * @description Sets the text direction.
    */
   dir(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._dir;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._dir = arg1; 
-    
+      this._dir = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.dir(null): Invalid signature.`);
     else
-      throw new TypeError(`BidirectionalOverride.dir(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.dir(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

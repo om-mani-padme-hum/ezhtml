@@ -14,7 +14,8 @@
     "HTML",
     "DOM",
     "JavaScript",
-    "Node"
+    "Node",
+    "EZHTML"
   ],
   "author": "Rich Lowe",
   "license": "MIT",
@@ -26,5 +27,8 @@
         "impliedStrict": true
       }
     }
+  },
+  "devDependencies": {
+    "docket-parser": "^0.5.2"
   }
 }

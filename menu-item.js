@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class MenuItem
+ * @class ezhtml.MenuItem
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML menu item elements.
@@ -32,185 +33,273 @@ class MenuItem extends containerElement.ContainerElement {
   }
   
   /**
-   * Label getter/setter.
-   * @signature label() Get the label
-   * @signature label(string) Set the label as (string)
-   * @return This object for call chaining
+   * @signature label()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the menu item, as shown to the user.
+   *
+   * @signature label(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Sets the name of the menu item, as shown to the user.
    */
   label(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._label;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._label = arg1; 
-    
+      this._label = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.label(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.label(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.label(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the type of menu item, default is `command`, can be `checkbox`, `command`, `radio`.
+   *
+   * @signature type(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets the type of menu item, default is `command`, can be `checkbox`, `command`, `radio`.
    */
   type(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._type;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._type = arg1; 
-    
+      this._type = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.type(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Command getter/setter.
-   * @signature command() Get the command
-   * @signature command(string) Set the command as (string)
-   * @return This object for call chaining
+   * @signature command()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the abstract command role that this menu item plays.
+   *
+   * @signature command(role)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param role string
+   * @returns this
+   * @throws TypeError if `role` is not a valid [string]
+   * @description Sets the abstract command role that this menu item plays.
    */
   command(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._command;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._command = arg1; 
-    
+      this._command = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.command(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.command(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.command(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Icon URL getter/setter.
-   * @signature icon() Get the icon URL
-   * @signature icon(string) Set the icon URL as (string)
-   * @return This object for call chaining
+   * @signature icon()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL to be used for the menu item icon.
+   *
+   * @signature icon(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL to be used for the menu item icon.
    */
   icon(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._icon;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._icon = arg1; 
-    
+      this._icon = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.icon(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.icon(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.icon(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Radio group getter/setter.
-   * @signature radiogroup() Get the radio group
-   * @signature radiogroup(string) Set the radio group as (string)
-   * @return This object for call chaining
+   * @signature radiogroup()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the group of commands that will be toggled when the menu item itself is toggled, only for type `radio`.
+   *
+   * @signature radiogroup(group)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param group string
+   * @returns this
+   * @throws TypeError if `group` is not a valid [string]
+   * @description Sets the name of the group of commands that will be toggled when the menu item itself is toggled, only for type `radio`.
    */
   radiogroup(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._radiogroup;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._radiogroup = arg1; 
-    
+      this._radiogroup = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.radiogroup(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.radiogroup(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.radiogroup(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Disabled boolean getter/setter.
-   * @signature disabled() Get the disabled boolean
-   * @signature disabled(boolean) Set the disabled boolean as (boolean)
-   * @return This object for call chaining
+   * @signature disabled()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this menu item is disabled.
+   *
+   * @signature disabled(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this menu item is disabled.
    */
   disabled(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._disabled;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._disabled = arg1; 
-    
+      this._disabled = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.disabled(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.disabled(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.disabled(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Checked boolean getter/setter.
-   * @signature checked() Get the checked boolean
-   * @signature checked(boolean) Set the checked boolean as (boolean)
-   * @return This object for call chaining
+   * @signature checked()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this menu item is active.
+   *
+   * @signature checked(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this menu item is active.
    */
   checked(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._checked;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._checked = arg1; 
-    
+      this._checked = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.checked(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.checked(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.checked(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Default boolean getter/setter.
-   * @signature default() Get the default boolean
-   * @signature default(boolean) Set the default boolean as (boolean)
-   * @return This object for call chaining
+   * @signature default()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this is the default menu item.
+   *
+   * @signature default(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this is the default menu item.
    */
   default(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._default;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._default = arg1; 
-    
+      this._default = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.default(null): Invalid signature.`);
     else
-      throw new TypeError(`MenuItem.default(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.default(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

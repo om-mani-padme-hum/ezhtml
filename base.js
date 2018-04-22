@@ -2,9 +2,10 @@
 const element = require('./element');
 
 /**
- * @class Base
+ * @class ezhtml.Base
  * @extends Element
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML base elements.
@@ -24,47 +25,69 @@ class Base extends element.Element {
   }
   
   /**
-   * Hyperlink reference getter/setter.
-   * @signature href() Get the hyperlink reference
-   * @signature href(string) Set the hyperlink reference as (string)
-   * @return This object for call chaining
+   * @signature href()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the base URL for all relative URLs in the page.
+   *
+   * @signature href(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the base URL for all relative URLs in the page.
    */
   href(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._href;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._href = arg1; 
-    
+      this._href = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.href(null): Invalid signature.`);
     else
-      throw new TypeError(`Base.href(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.href(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Target getter/setter.
-   * @signature target() Get the target
-   * @signature target(string) Set the target as (string)
-   * @return This object for call chaining
+   * @signature target()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the default target for all hyperlinks and forms in the page.
+   *
+   * @signature target(method)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param method string
+   * @returns this
+   * @throws TypeError if `method` is not a valid [string]
+   * @description Sets the default target for all hyperlinks and forms in the page.
    */
   target(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._target;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._target = arg1; 
-    
+      this._target = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.target(null): Invalid signature.`);
     else
-      throw new TypeError(`Base.target(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.target(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

@@ -2,7 +2,7 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Underline
+ * @class ezhtml.Underline
  * @extends ContainerElement
  * @added v0.1.0
  * @author Rich Lowe

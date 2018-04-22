@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class TableData
+ * @class ezhtml.TableData
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML table data elements.
@@ -27,70 +28,103 @@ class TableData extends containerElement.ContainerElement {
   }
   
   /**
-   * Colspan getter/setter.
-   * @signature colspan() Get the colspan
-   * @signature colspan(number) Set the colspan as (number)
-   * @return This object for call chaining
+   * @signature colspan()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the number of columns the cell should span.
+   *
+   * @signature colspan(span)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param span number
+   * @returns this
+   * @throws TypeError if `span` is not a valid [number]
+   * @description Sets the number of columns the cell should span.
    */
   colspan(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._colspan;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._colspan = arg1; 
-    
+      this._colspan = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.colspan(null): Invalid signature.`);
     else
-      throw new TypeError(`TableData.colspan(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.colspan(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Headers getter/setter.
-   * @signature headers() Get the headers
-   * @signature headers(string) Set the headers as (string)
-   * @return This object for call chaining
+   * @signature headers()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets one or more header cells a cell is related to.
+   *
+   * @signature headers(headers)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param headers string
+   * @returns this
+   * @throws TypeError if `headers` is not a valid [string]
+   * @description Sets one or more header cells a cell is related to.
    */
   headers(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._headers;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._headers = arg1; 
-    
+      this._headers = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.headers(null): Invalid signature.`);
     else
-      throw new TypeError(`TableData.headers(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.headers(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Rowspan getter/setter.
-   * @signature rowspan() Get the rowspan
-   * @signature rowspan(number) Set the rowspan as (number)
-   * @return This object for call chaining
+   * @signature rowspan()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the number of rows the cell should span.
+   *
+   * @signature rowspan(span)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param span number
+   * @returns this
+   * @throws TypeError if `span` is not a valid [number]
+   * @description Sets the number of rows the cell should span.
    */
   rowspan(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._rowspan;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._rowspan = arg1; 
-    
+      this._rowspan = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.rowspan(null): Invalid signature.`);
     else
-      throw new TypeError(`TableData.rowspan(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.rowspan(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Time
+ * @class ezhtml.Time
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML time elements.
@@ -26,24 +27,35 @@ class Time extends containerElement.ContainerElement {
   }
   
   /**
-   * Date/time getter/setter.
-   * @signature datetime() Get the date/time
-   * @signature datetime(string) Set the date/time as (string)
-   * @return This object for call chaining
+   * @signature datetime()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the date and time represented by this element.
+   *
+   * @signature datetime(datetime)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param datetime string Many formats supported, see HTML 5 documentation
+   * @returns this
+   * @throws TypeError if `datetime` is not a valid [string]
+   * @description Sets the date and time represented by this element.
    */
   datetime(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._datetime;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._datetime = arg1; 
-    
+      this._datetime = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.datetime(null): Invalid signature.`);
     else
-      throw new TypeError(`Time.datetime(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.datetime(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

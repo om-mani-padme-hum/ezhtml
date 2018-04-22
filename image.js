@@ -2,9 +2,10 @@
 const element = require('./element');
 
 /**
- * @class Image
+ * @class ezhtml.Image
  * @extends Element
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML image elements.
@@ -34,231 +35,341 @@ class Image extends element.Element {
   }
   
   /**
-   * Alternate text getter/setter.
-   * @signature alt() Get the alternate text
-   * @signature alt(string) Set the alternate text as (string)
-   * @return This object for call chaining
+   * @signature alt()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the alternate text for the image.
+   *
+   * @signature alt(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Sets the alternate text for the image.
    */
   alt(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._alt;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._alt = arg1; 
-    
+      this._alt = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.alt(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.alt(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.alt(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Cross origin getter/setter.
-   * @signature crossorigin() Get the cross origin
-   * @signature crossorigin(string) Set the cross origin as (string)
-   * @return This object for call chaining
+   * @signature crossorigin()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets whether to allow images from third-party sites that allow cross-origin access to be used with canvas, can be `anonymous` or `use-credentials`.
+   *
+   * @signature crossorigin(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets whether to allow images from third-party sites that allow cross-origin access to be used with canvas, can be `anonymous` or `use-credentials`.
    */
   crossorigin(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._crossorigin;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._crossorigin = arg1; 
-    
+      this._crossorigin = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.crossorigin(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.crossorigin(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.crossorigin(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Height getter/setter.
-   * @signature height() Get the height
-   * @signature height(number) Set the height as (number)
-   * @return This object for call chaining
+   * @signature height()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the height of the image in pixels.
+   *
+   * @signature height(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the height of the image in pixels.
    */
   height(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._height;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._height = arg1; 
-    
+      this._height = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.height(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.height(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.height(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Is map boolean getter/setter.
-   * @signature ismap() Get the is map boolean
-   * @signature ismap(boolean) Set the is map boolean as (boolean)
-   * @return This object for call chaining
+   * @signature ismap()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this is a server-side image map.
+   *
+   * @signature ismap(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this is a server-side image map.
    */
   ismap(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._ismap;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._ismap = arg1; 
-    
+      this._ismap = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.ismap(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.ismap(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.ismap(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Long description getter/setter.
-   * @signature longdesc() Get the long description
-   * @signature longdesc(string) Set the long description as (string)
-   * @return This object for call chaining
+   * @signature longdesc()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets a URL to a document with a long description of the image.
+   *
+   * @signature longdesc(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets a URL to a document with a long description of the image.
    */
   longdesc(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._longdesc;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._longdesc = arg1; 
-    
+      this._longdesc = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.longdesc(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.longdesc(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.longdesc(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Sizes getter/setter.
-   * @signature sizes() Get the sizes
-   * @signature sizes(string) Set the sizes as (string)
-   * @return This object for call chaining
+   * @signature sizes()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets any specific image sizes for different page layouts.
+   *
+   * @signature sizes(device)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param device string
+   * @returns this
+   * @throws TypeError if `device` is not a valid [string]
+   * @description Sets any specific image sizes for different page layouts.
    */
   sizes(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._sizes;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._sizes = arg1; 
-    
+      this._sizes = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.sizes(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.sizes(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.sizes(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source getter/setter.
-   * @signature src() Get the source
-   * @signature src(string) Set the source as (string)
-   * @return This object for call chaining
+   * @signature src()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of the image.
+   *
+   * @signature src(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of the image.
    */
   src(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._src;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._src = arg1; 
-    
+      this._src = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.src(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.src(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.src(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source set getter/setter.
-   * @signature srcset() Get the source set
-   * @signature srcset(string) Set the source set as (string)
-   * @return This object for call chaining
+   * @signature srcset()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URLs of the image to use in different situations.
+   *
+   * @signature srcset(urls)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param urls string
+   * @returns this
+   * @throws TypeError if `urls` is not a valid [string]
+   * @description Sets the URLs of the image to use in different situations.
    */
   srcset(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._srcset;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._srcset = arg1; 
-    
+      this._srcset = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.srcset(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.srcset(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.srcset(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Use map getter/setter.
-   * @signature usemap() Get the use map
-   * @signature usemap(string) Set the use map as (string)
-   * @return This object for call chaining
+   * @signature usemap()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the ID of a [Map] element that should be used as a client-side iamge map.
+   *
+   * @signature usemap(method)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param method string
+   * @returns this
+   * @throws TypeError if `method` is not a valid [string]
+   * @description Sets the ID of a [Map] element that should be used as a client-side iamge map.
    */
   usemap(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._usemap;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._usemap = arg1; 
-    
+      this._usemap = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.usemap(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.usemap(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.usemap(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Width getter/setter.
-   * @signature width() Get the width
-   * @signature width(number) Set the width as (number)
-   * @return This object for call chaining
+   * @signature width()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the width of the image in pixels.
+   *
+   * @signature width(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the width of the image in pixels.
    */
   width(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._width;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._width = arg1; 
-    
+      this._width = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.width(null): Invalid signature.`);
     else
-      throw new TypeError(`Image.width(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.width(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

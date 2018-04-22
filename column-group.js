@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class ColumnGroup
+ * @class ezhtml.ColumnGroup
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML column group elements.
@@ -26,24 +27,35 @@ class ColumnGroup extends containerElement.ContainerElement {
   }
   
   /**
-   * Span getter/setter.
-   * @signature span() Get the span
-   * @signature span(number) Set the span as (number)
-   * @return This object for call chaining
+   * @signature span()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the number of columns this group spans.
+   *
+   * @signature span(columns)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param columns number
+   * @returns this
+   * @throws TypeError if `columns` is not a valid [number]
+   * @description Sets the number of columns this group spans.
    */
   span(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._span;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._span = arg1; 
-    
+      this._span = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.span(null): Invalid signature.`);
     else
-      throw new TypeError(`ColumnGroup.span(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.span(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

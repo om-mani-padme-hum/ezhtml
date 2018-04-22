@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class ListItem
+ * @class ezhtml.ListItem
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML list item elements.
@@ -21,28 +22,41 @@ class ListItem extends containerElement.ContainerElement {
   constructor(data = {}) {
     super(data);
     
-    this.value(data.value || '');
+    this.value(data.value || 0);
   }
   
   /**
-   * Value getter/setter.
-   * @signature value() Get the value
-   * @signature value(string) Set the value as (string)
-   * @return This object for call chaining
+   * @signature value()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the value of the list item number that will be incremented from here on, only for list items in 
+   * [OrderedList] elements.
+   *
+   * @signature value(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the value of the list item number that will be incremented from here on, only for list items in 
+   * [OrderedList] elements.
    */
   value(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._value;
-    
+
     /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._value = arg1; 
-    
+    else if ( typeof arg1 == 'number' )
+      this._value = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.value(null): Invalid signature.`);
     else
-      throw new TypeError(`ListItem.value(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.value(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
@@ -55,7 +69,7 @@ class ListItem extends containerElement.ContainerElement {
    * @description Render this element with `indent` spaces of indentation before each line.
    */
   render(indent) {
-    if ( this.value().length > 0 )
+    if ( this.value() > 0 )
       this.attr('value', this.value());
     
     this.tag('li');

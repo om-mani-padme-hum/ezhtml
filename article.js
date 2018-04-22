@@ -2,7 +2,7 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Article
+ * @class ezhtml.Article
  * @extends ContainerElement
  * @added v0.1.0
  * @author Rich Lowe

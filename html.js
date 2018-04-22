@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class HTML
+ * @class ezhtml.HTML
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML HTML elements.
@@ -22,30 +23,6 @@ class HTML extends containerElement.ContainerElement {
     super(data);
     
     this.allowedContent(['Head', 'Body']);
-    this.lang(data.lang || '');
-  }
-  
-  /**
-   * Lang attribute getter/setter.
-   * @signature lang() Get the lang attribute
-   * @signature lang(string) Set the lang attribute as (string)
-   * @return This object for call chaining
-   */
-  lang(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._lang;
-    
-    /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._lang = arg1; 
-    
-    /** Handle errors */
-    else
-      throw new TypeError(`Html.lang(): Invalid signature (${typeof arg1}).`);
-    
-    /** Allow for call chaining */
-    return this;
   }
   
   /**
@@ -55,13 +32,10 @@ class HTML extends containerElement.ContainerElement {
    * @return string Rendered HTML
    * @description Render this element with `indent` spaces of indentation before each line.
    */
-  render(indent = 0) {
-    if ( this.lang().length > 0 )
-      this.attr('lang', this.lang());
-    
+  render(indent = 0) {    
     this.tag('html');
     
-    return super.render(indent);
+    return '<!DOCTYPE html>\n' + super.render(indent);
   }
 }
 

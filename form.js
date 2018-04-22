@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Form
+ * @class ezhtml.Form
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML form elements.
@@ -32,185 +33,275 @@ class Form extends containerElement.ContainerElement {
   }
   
   /**
-   * Accept charset getter/setter.
-   * @signature acceptCharset() Get the accept charset
-   * @signature acceptCharset(string) Set the accept charset as (string)
-   * @return This object for call chaining
+   * @signature acceptCharset()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the character encodings that are to be used for the form submission.
+   *
+   * @signature acceptCharset(charset)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param charset string
+   * @returns this
+   * @throws TypeError if `charset` is not a valid [string]
+   * @description Sets the character encodings that are to be used for the form submission.
    */
   acceptCharset(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._acceptCharset;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._acceptCharset = arg1; 
-    
+      this._acceptCharset = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.acceptCharset(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.acceptCharset(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.acceptCharset(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Action getter/setter.
-   * @signature action() Get the action
-   * @signature action(string) Set the action as (string)
-   * @return This object for call chaining
+   * @signature action()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of the document that this form submit its data to.
+   *
+   * @signature action(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of the document that this form submit its data to.
    */
   action(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._action;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._action = arg1; 
-    
+      this._action = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.action(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.action(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.action(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Autocomplete setting getter/setter.
-   * @signature autocomplete() Get the autocomplete setting
-   * @signature autocomplete(string) Set the autocomplete setting as (string)
-   * @return This object for call chaining
+   * @signature autocomplete()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets a flag inicating whether the browser should enable autocomplete for this form, can be `on` or `off`.
+   *
+   * @signature autocomplete(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag string
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [string]
+   * @description Sets a flag inicating whether the browser should enable autocomplete for this form, can be `on` or `off`.
    */
   autocomplete(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._autocomplete;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._autocomplete = arg1; 
-    
+      this._autocomplete = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.autocomplete(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.autocomplete(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.autocomplete(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Encoding type getter/setter.
-   * @signature enctype() Get the encoding type
-   * @signature enctype(string) Set the encoding type as (string)
-   * @return This object for call chaining
+   * @signature enctype()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the encoding used to send the form data to the server, can be `application/x-www-form-urlencoded`, 
+   * `multipart/form-data`, or `text/plain`.
+   *
+   * @signature enctype(enctype)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param enctype string
+   * @returns this
+   * @throws TypeError if `enctype` is not a valid [string]
+   * @description Sets the encoding used to send the form data to the server, can be `application/x-www-form-urlencoded`, 
+   * `multipart/form-data`, or `text/plain`.
    */
   enctype(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._enctype;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._enctype = arg1; 
-    
+      this._enctype = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.enctype(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.enctype(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.enctype(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Method getter/setter.
-   * @signature method() Get the method
-   * @signature method(string) Set the method as (string)
-   * @return This object for call chaining
+   * @signature method()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the HTTP method used to send the data.
+   *
+   * @signature method(method)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param method string
+   * @returns this
+   * @throws TypeError if `method` is not a valid [string]
+   * @description Sets the HTTP method used to send the data.
    */
   method(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._method;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._method = arg1; 
-    
+      this._method = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.method(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.method(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.method(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Name getter/setter.
-   * @signature name() Get the name
-   * @signature name(string) Set the name as (string)
-   * @return This object for call chaining
+   * @signature name()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the form.
+   *
+   * @signature name(name)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param name string
+   * @returns this
+   * @throws TypeError if `name` is not a valid [string]
+   * @description Sets the name of the form.
    */
   name(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._name;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._name = arg1; 
-    
+      this._name = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.name(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.name(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.name(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * No-validate boolean getter/setter.
-   * @signature novalidate() Get the no-validate boolean
-   * @signature novalidate(boolean) Set the no-validate boolean as (boolean)
-   * @return This object for call chaining
+   * @signature novalidate()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the form-data should not be validated on submission.
+   *
+   * @signature novalidate(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the form-data should not be validated on submission.
    */
   novalidate(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._novalidate;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._novalidate = arg1; 
-    
+      this._novalidate = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.novalidate(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.novalidate(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.novalidate(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Target getter/setter.
-   * @signature target() Get the target
-   * @signature target(string) Set the target as (string)
-   * @return This object for call chaining
+   * @signature target()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets where to display the response after submitting the form, can be `_blank`, `_self`, `_parent`, or `_top`.
+   *
+   * @signature target(target)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param target string
+   * @returns this
+   * @throws TypeError if `target` is not a valid [string]
+   * @description Sets where to display the response after submitting the form, can be `_blank`, `_self`, `_parent`, or `_top`.
    */
   target(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._target;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._target = arg1; 
-    
+      this._target = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.target(null): Invalid signature.`);
     else
-      throw new TypeError(`Form.target(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.target(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

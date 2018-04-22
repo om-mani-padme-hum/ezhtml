@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class OptionGroup
+ * @class ezhtml.OptionGroup
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML option group elements.
@@ -27,47 +28,69 @@ class OptionGroup extends containerElement.ContainerElement {
   }
   
   /**
-   * Disabled boolean getter/setter.
-   * @signature disabled() Get the disabled boolean
-   * @signature disabled(boolean) Set the disabled boolean as (boolean)
-   * @return This object for call chaining
+   * @signature disabled()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this group of options should be disabled.
+   *
+   * @signature disabled(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this group of options should be disabled.
    */
   disabled(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._disabled;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._disabled = arg1; 
-    
+      this._disabled = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.disabled(null): Invalid signature.`);
     else
-      throw new TypeError(`OptionGroup.disabled(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.disabled(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Label getter/setter.
-   * @signature label() Get the label
-   * @signature label(string) Set the label as (string)
-   * @return This object for call chaining
+   * @signature label()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the option group, as shown to the user.
+   *
+   * @signature label(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Sets the name of the option group, as shown to the user.
    */
   label(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._label;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._label = arg1; 
-    
+      this._label = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.label(null): Invalid signature.`);
     else
-      throw new TypeError(`OptionGroup.label(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.label(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

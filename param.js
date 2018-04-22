@@ -2,9 +2,10 @@
 const element = require('./element');
 
 /**
- * @class Param
+ * @class ezhtml.Param
  * @extends Element
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML paran elements.
@@ -26,47 +27,69 @@ class Param extends element.Element {
   }
   
   /**
-   * Name getter/setter.
-   * @signature name() Get the name
-   * @signature name(string) Set the name as (string)
-   * @return This object for call chaining
+   * @signature name()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of this parameter.
+   *
+   * @signature name(name)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param name string
+   * @returns this
+   * @throws TypeError if `name` is not a valid [string]
+   * @description Sets the name of this parameter.
    */
   name(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._name;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._name = arg1; 
-    
+      this._name = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.name(null): Invalid signature.`);
     else
-      throw new TypeError(`Param.name(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.name(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Value getter/setter.
-   * @signature value() Get the value
-   * @signature value(string) Set the value as (string)
-   * @return This object for call chaining
+   * @signature value()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the value of this parameter.
+   *
+   * @signature value(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value string|number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [string] or [number]
+   * @description Sets the value of this parameter.
    */
   value(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._value;
-    
+
     /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._value = arg1; 
-    
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._value = arg1.toString();
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.value(null): Invalid signature.`);
     else
-      throw new TypeError(`Param.value(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.value(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

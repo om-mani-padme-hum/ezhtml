@@ -2,9 +2,10 @@
 const element = require('./element');
 
 /**
- * @class Output
+ * @class ezhtml.Output
  * @extends Element
  * @added v0.1.0
+ * @added v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML output elements.
@@ -27,70 +28,103 @@ class Output extends element.Element {
   }
   
   /**
-   * For ID getter/setter.
-   * @signature for() Get the for ID
-   * @signature for(string) Set the for ID as (string)
-   * @return This object for call chaining
+   * @signature for()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets a space delimited list of input ids that are used in computing this output.
+   *
+   * @signature for(elementIds)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param elementIds string
+   * @returns this
+   * @throws TypeError if `elementIds` is not a valid [string]
+   * @description Sets a space delimited list of input ids that are used in computing this output.
    */
   for(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._for;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._for = arg1; 
-    
+      this._for = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.for(null): Invalid signature.`);
     else
-      throw new TypeError(`Output.for(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.for(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Form ID getter/setter.
-   * @signature form() Get the form ID
-   * @signature form(string) Set the form ID as (string)
-   * @return This object for call chaining
+   * @signature form()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the id of the form that this output belongs to.
+   *
+   * @signature form(formId)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param formId string
+   * @returns this
+   * @throws TypeError if `formId` is not a valid [string]
+   * @description Sets the id of the form that this output belongs to.
    */
   form(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._form;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._form = arg1; 
-    
+      this._form = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.form(null): Invalid signature.`);
     else
-      throw new TypeError(`Output.form(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.form(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Name getter/setter.
-   * @signature name() Get the name
-   * @signature name(string) Set the name as (string)
-   * @return This object for call chaining
+   * @signature name()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of this output.
+   *
+   * @signature name(name)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param name string
+   * @returns this
+   * @throws TypeError if `name` is not a valid [string]
+   * @description Sets the name of this output.
    */
   name(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._name;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._name = arg1; 
-    
+      this._name = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.name(null): Invalid signature.`);
     else
-      throw new TypeError(`Output.name(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.name(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

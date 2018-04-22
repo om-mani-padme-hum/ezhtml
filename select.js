@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Select
+ * @class ezhtml.Select
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML select elements.
@@ -32,188 +33,239 @@ class Select extends containerElement.ContainerElement {
   }
   
   /**
-   * Auto-focus boolean getter/setter.
-   * @signature autofocus() Get the auto-focus boolean
-   * @signature autofocus(boolean) Set the auto-focus boolean as (boolean)
-   * @return This object for call chaining
+   * @signature autofocus()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the select box should automatically get focus when the page loads.
+   *
+   * @signature autofocus(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the select box should automatically get focus when the page loads.
    */
   autofocus(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._autofocus;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._autofocus = arg1; 
-    
+      this._autofocus = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.autofocus(null): Invalid signature.`);
     else
-      throw new TypeError(`Select.autofocus(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.autofocus(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Disabled boolean getter/setter.
-   * @signature disabled() Get the disabled boolean
-   * @signature disabled(boolean) Set the disabled boolean as (boolean)
-   * @return This object for call chaining
+   * @signature disabled()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the select box should be disabled.
+   *
+   * @signature disabled(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the select box should be disabled.
    */
   disabled(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._disabled;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._disabled = arg1; 
-    
+      this._disabled = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.disabled(null): Invalid signature.`);
     else
-      throw new TypeError(`Select.disabled(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.disabled(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Form getter/setter.
-   * @signature form() Get the form
-   * @signature form(string) Set the form as (string)
-   * @return This object for call chaining
+   * @signature form()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the id of the form that this select box belongs to.
+   *
+   * @signature form(formId)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param formId string
+   * @returns this
+   * @throws TypeError if `formId` is not a valid [string]
+   * @description Sets the id of the form that this select box belongs to.
    */
   form(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._form;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._form = arg1; 
-    
+      this._form = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.form(null): Invalid signature.`);
     else
-      throw new TypeError(`Select.form(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.form(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Multiple boolean getter/setter.
-   * @signature multiple() Get the multiple boolean
-   * @signature multiple(boolean) Set the multiple boolean as (boolean)
-   * @return This object for call chaining
+   * @signature multiple()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this is a multiple-select box.
+   *
+   * @signature multiple(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this is a multiple-select box.
    */
   multiple(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._multiple;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._multiple = arg1; 
-    
+      this._multiple = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.multiple(null): Invalid signature.`);
     else
-      throw new TypeError(`Select.multiple(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.multiple(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Name getter/setter.
-   * @signature name() Get the name
-   * @signature name(string) Set the name as (string)
-   * @return This object for call chaining
+   * @signature name()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the select box.
+   *
+   * @signature name(name)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param name string
+   * @returns this
+   * @throws TypeError if `name` is not a valid [string]
+   * @description Sets the name of the select box.
    */
   name(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._name;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._name = arg1; 
-    
+      this._name = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.name(null): Invalid signature.`);
     else
-      throw new TypeError(`Select.name(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.name(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
-  /**
-   * Find option by value.
-   * @signature option(string) Get option with value matching (string)
-   * @return The found option
-   */
-  option(arg1) {
-    let element = null;
-    
-    const getOptionByValue = (parent, value) => {
-      if ( typeof parent.value == 'function' && parent.value() == value )   
-        element = parent;
-      
-      if ( typeof parent.content == 'function' && typeof parent.content() == 'object' && parent.content().constructor.name == 'Array' ) {
-        parent.content().forEach((item) => {
-          getOptionByValue(item, value);
-        });
-      }
-    };
 
-    this.content().forEach((item) => {
-      getOptionByValue(item, arg1);
-    });
-        
-    return element;
-  }
-  
   /**
-   * Required boolean getter/setter.
-   * @signature required() Get the required boolean
-   * @signature required(boolean) Set the required boolean as (boolean)
-   * @return This object for call chaining
+   * @signature required()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this select box input is required.
+   *
+   * @signature required(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this select box input is required.
    */
   required(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._required;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._required = arg1; 
-    
+      this._required = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.required(null): Invalid signature.`);
     else
-      throw new TypeError(`Select.required(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.required(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Size getter/setter.
-   * @signature size() Get the size
-   * @signature size(number) Set the size as (number)
-   * @return This object for call chaining
+   * @signature size()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the size of the select box, for multiple-select boxes only.
+   *
+   * @signature size(size)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param size number
+   * @returns this
+   * @throws TypeError if `size` is not a valid [number]
+   * @description Sets the size of the select box, for multiple-select boxes only.
    */
   size(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._size;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._size = arg1; 
-    
+      this._size = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.size(null): Invalid signature.`);
     else
-      throw new TypeError(`Select.size(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.size(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

@@ -3,9 +3,10 @@ const element = require('./element');
 const text = require('./text');
 
 /**
- * @class ContainerElement
+ * @class ezhtml.ContainerElement
  * @extends Element
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML container elements.
@@ -27,33 +28,59 @@ class ContainerElement extends element.Element {
   }
   
   /**
-   * Allowed content getter/setter.
-   * @signature allowedContent() Get the allowed content
-   * @signature allowedContent(object[Array]) Set the allowed content as (object[Array])
-   * @return This object for call chaining
+   * @signature allowedContent()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns Array
+   * @description Gets an [Array] of [string] objects containing class names of elements that are allowed to be added as
+   * content in this container.  An empty [Array] allows all elements to be added.
+   *
+   * @signature allowedContent(classArray)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param classArray Array
+   * @returns this
+   * @throws TypeError if `classArray` is not a valid [Array]
+   * @description Sets an [Array] of [string] objects containing class names of elements that are allowed to be added as
+   * content in this container.  An empty [Array] allows all elements to be added.
    */
   allowedContent(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._allowedContent;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
-      this._allowedContent = arg1; 
-    
+      this._allowedContent = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.allowedContent(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.content(): Invalid signature (${typeof arg1}[${arg1.constructor.name}]).`);
-    
+      throw new TypeError(`${this.constructor.name}.allowedContent(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Content getter/setter.
-   * @signature content() Get the content
-   * @signature content(object[Array]) Set the content as (object[Array])
-   * @return This object for call chaining
+   * @signature content()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns Array
+   * @description Gets an [Array] of potentially mixed [string], [function], and [Element] extending objects that make up
+   * the content of this container.  The members of the [Array] represent only the direct child descendents of this object,
+   * while those children may also have their own content, etc.
+   *
+   * @signature content(contentArray)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param contentArray Array
+   * @returns this
+   * @throws TypeError if `contentArray` is not a valid [Array]
+   * @description Sets an [Array] of potentially mixed [string], [function], and [Element] extending objects that make up
+   * the content of this container.  The members of the [Array] represent only the direct child descendents of this object,
+   * while those children may also have their own content, etc.
    */
   content(arg1) {
     /** Getter */
@@ -65,8 +92,10 @@ class ContainerElement extends element.Element {
       this._content = arg1; 
     
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.content(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.content(): Invalid signature (${typeof arg1}[${arg1.constructor.name}]).`);
+      throw new TypeError(`${this.constructor.name}.content(${arg1.constructor.name}): Invalid signature.`);
     
     /** Set parent for all items */
     const parent = this;
@@ -80,10 +109,14 @@ class ContainerElement extends element.Element {
     return this;
   }
   
-  /**
-   * Prepend HTML element or string to content.
-   * @signature content(mixed) Add (mixed) to beginning of content
-   * @return This object for call chaining
+  /*
+   * @signature prepend(content)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param content [string|function|Element]
+   * @returns this
+   * @throws TypeError if `content` is not a valid [String] or [Function] or [Element] extending object
+   * @description Prepends `content` to the beginning of the content array.
    */
   prepend(arg1) {
     /** Setter */
@@ -93,8 +126,10 @@ class ContainerElement extends element.Element {
       this._content.unshift(arg1);
     
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.content(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.prepend(): Invalid signature (${typeof arg1}[${arg1.constructor.name}]).`);
+      throw new TypeError(`${this.constructor.name}.content(${arg1.constructor.name}): Invalid signature.`);
     
     /** Set parent */
     if ( typeof arg1 != 'function' )
@@ -104,10 +139,14 @@ class ContainerElement extends element.Element {
     return this;
   }
   
-  /**
-   * Append HTML element or string to content.
-   * @signature content(mixed) Add (mixed) to content
-   * @return This object for call chaining
+  /*
+   * @signature append(content)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param content string|function|Element
+   * @returns this
+   * @throws TypeError if `content` is not a valid [String] or [Function] or [Element] extending object
+   * @description Appends `content` to the end of the content array.
    */
   append(arg1) {
     /** Setter */
@@ -128,10 +167,14 @@ class ContainerElement extends element.Element {
     return this;
   }
   
-  /**
-   * Append text to content.
-   * @signature text(string|number) Append text as (string|number) to content
-   * @return This object for call chaining
+  /*
+   * @signature text(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Appends plain `text` to the end of the content array.
    */
   text(arg1) {
     /** Add text if string */

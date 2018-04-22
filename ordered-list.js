@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class OrderedList
+ * @class ezhtml.OrderedList
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML ordered list elements.
@@ -28,33 +29,53 @@ class OrderedList extends containerElement.ContainerElement {
   }
   
   /**
-   * Reversed boolean getter/setter.
-   * @signature reversed() Get the reversed boolean
-   * @signature reversed(boolean) Set the reversed boolean as (boolean)
-   * @return This object for call chaining
+   * @signature reversed()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether this list should have its order reversed.
+   *
+   * @signature reversed(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether this list should have its order reversed.
    */
   reversed(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._reversed;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._reversed = arg1; 
-    
+      this._reversed = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.reversed(null): Invalid signature.`);
     else
-      throw new TypeError(`OrderedList.reversed(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.reversed(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Start value getter/setter.
-   * @signature start() Get the start value
-   * @signature start(number) Set the start value as (number)
-   * @return This object for call chaining
+   * @signature start()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the starting value to use for the list.
+   *
+   * @signature start(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [number]
+   * @description Sets the starting value to use for the list.
    */
   start(arg1) {
     /** Getter */
@@ -66,18 +87,29 @@ class OrderedList extends containerElement.ContainerElement {
       this._start = arg1; 
     
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.start(null): Invalid signature.`);
     else
-      throw new TypeError(`OrderedList.start(): Invalid signature (${typeof arg1}).`);
+      throw new TypeError(`${this.constructor.name}.start(${arg1.constructor.name}): Invalid signature.`);
     
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the type of marker to use in the list, can be `1`, `A`, `a`, `I`, or `i`.
+   *
+   * @signature type(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets the type of marker to use in the list, can be `1`, `A`, `a`, `I`, or `i`.
    */
   type(arg1) {
     /** Getter */
@@ -89,8 +121,10 @@ class OrderedList extends containerElement.ContainerElement {
       this._type = arg1; 
     
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
     else
-      throw new TypeError(`OrderedList.type(): Invalid signature (${typeof arg1}).`);
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
     
     /** Allow for call chaining */
     return this;

@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class SVG
+ * @class ezhtml.SVG
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML SVG elements.
@@ -26,47 +27,69 @@ class SVG extends containerElement.ContainerElement {
   }
   
   /**
-   * Height getter/setter.
-   * @signature height() Get the height
-   * @signature height(number) Set the height as (number)
-   * @return This object for call chaining
+   * @signature height()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the height of the SVG in pixels.
+   *
+   * @signature height(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the height of the SVG in pixels.
    */
   height(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._height;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._height = arg1; 
-    
+      this._height = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.height(null): Invalid signature.`);
     else
-      throw new TypeError(`SVG.height(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.height(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Width getter/setter.
-   * @signature width() Get the width
-   * @signature width(number) Set the width as (number)
-   * @return This object for call chaining
+   * @signature width()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the width of the SVG in pixels.
+   *
+   * @signature width(pixels)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param pixels number
+   * @returns this
+   * @throws TypeError if `pixels` is not a valid [number]
+   * @description Sets the width of the SVG in pixels.
    */
   width(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._width;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._width = arg1; 
-    
+      this._width = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.width(null): Invalid signature.`);
     else
-      throw new TypeError(`SVG.width(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.width(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

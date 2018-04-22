@@ -2,9 +2,10 @@
 const element = require('./element');
 
 /**
- * @class Area
+ * @class ezhtml.Area
  * @extends Element
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML area elements.
@@ -34,231 +35,341 @@ class Area extends element.Element {
   }
   
   /**
-   * Alternate text getter/setter.
-   * @signature alt() Get the alternate text
-   * @signature alt(string) Set the alternate text as (string)
-   * @return This object for call chaining
+   * @signature alt()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the alternate text for the area.
+   *
+   * @signature alt(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Sets the alternate text for the area.  Required if the href attribute is present.
    */
   alt(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._alt;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._alt = arg1; 
-    
+      this._alt = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.alt(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.alt(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.alt(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Coordinates getter/setter.
-   * @signature coords() Get the coordinates
-   * @signature coords(string) Set the coordinates as (string)
-   * @return This object for call chaining
+   * @signature coords()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the coordinates of the area.
+   *
+   * @signature coords(coordinates)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param coordinates string
+   * @returns this
+   * @throws TypeError if `coordinates` is not a valid [string]
+   * @description Sets the coordinates of the area.
    */
   coords(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._coords;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._coords = arg1; 
-    
+      this._coords = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.coords(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.coords(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.coords(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Download filename getter/setter.
-   * @signature download() Get the download filename
-   * @signature download(string) Set the download filename as (string)
-   * @return This object for call chaining
+   * @signature download()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the filename of the file that should be downloaded upon clicking this area link.
+   *
+   * @signature download(filename)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param filename string
+   * @returns this
+   * @throws TypeError if `filename` is not a valid [string]
+   * @description Sets the filename of the file that should be downloaded upon clicking this area link.
    */
   download(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._download;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._download = arg1; 
-    
+      this._download = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.download(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.download(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.download(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Hyperlink reference getter/setter.
-   * @signature href() Get the hyperlink reference
-   * @signature href(string) Set the hyperlink reference as (string)
-   * @return This object for call chaining
+   * @signature href()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the url the area link goes to.
+   *
+   * @signature href(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the url the area link goes to.
    */
   href(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._href;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._href = arg1; 
-    
+      this._href = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.href(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.href(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.href(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Hyperlink language getter/setter.
-   * @signature hreflang() Get the hyperlink language
-   * @signature hreflang(string) Set the hyperlink language as (string)
-   * @return This object for call chaining
+   * @signature hreflang()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the language of the linked document.
+   *
+   * @signature hreflang(lang)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param lang string
+   * @returns this
+   * @throws TypeError if `lang` is not a valid [string]
+   * @description Sets the language of the linked document.
    */
   hreflang(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._hreflang;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._hreflang = arg1; 
-    
+      this._hreflang = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.hreflang(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.hreflang(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.hreflang(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Media getter/setter.
-   * @signature media() Get the media
-   * @signature media(string) Set the media as (string)
-   * @return This object for call chaining
+   * @signature media()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the media device that the linked document is optimized for.
+   *
+   * @signature media(device)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param device string
+   * @returns this
+   * @throws TypeError if `device` is not a valid [string]
+   * @description Sets the media device that the linked document is optimized for.
    */
   media(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._media;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._media = arg1; 
-    
+      this._media = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.media(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.media(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.media(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Relationship getter/setter.
-   * @signature rel() Get the relationship
-   * @signature rel(string) Set the relationship as (string)
-   * @return This object for call chaining
+   * @signature rel()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the relationship between the current document and the linked document.
+   *
+   * @signature rel(relationship)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param relationship string
+   * @returns this
+   * @throws TypeError if `relationship` is not a valid [string]
+   * @description Sets the relationship between the current document and the linked document.
    */
   rel(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._rel;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._rel = arg1; 
-    
+      this._rel = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.rel(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.rel(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.rel(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Shape getter/setter.
-   * @signature shape() Get the shape
-   * @signature shape(string) Set the shape as (string)
-   * @return This object for call chaining
+   * @signature shape()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the shape of the area (default, rect, circle, poly).
+   *
+   * @signature shape(shape)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param shape string
+   * @returns this
+   * @throws TypeError if `shape` is not a valid [string]
+   * @description Sets the shape of the area (default, rect, circle, poly).
    */
   shape(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._shape;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._shape = arg1; 
-    
+      this._shape = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.shape(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.shape(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.shape(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Target getter/setter.
-   * @signature target() Get the target
-   * @signature target(string) Set the target as (string)
-   * @return This object for call chaining
+   * @signature target()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the method used to open the linked document.
+   *
+   * @signature target(method)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param method string
+   * @returns this
+   * @throws TypeError if `method` is not a valid [string]
+   * @description Sets the method used to open the linked document.
    */
   target(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._target;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._target = arg1; 
-    
+      this._target = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.target(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.target(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.target(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the media type of the linked document.
+   *
+   * @signature type(media)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param media string
+   * @returns this
+   * @throws TypeError if `media` is not a valid [string]
+   * @description Sets the media type of the linked document.
    */
   type(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._type;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._type = arg1; 
-    
+      this._type = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
     else
-      throw new TypeError(`Area.type(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

@@ -2,9 +2,10 @@
 const child = require('./child');
 
 /**
- * @class Element
+ * @class ezhtml.Element
  * @extends Child
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML elements.
@@ -24,15 +25,19 @@ class Element extends child.Child {
     this.attributes(data.attributes || []);
     this.classes(data.classes || '');
     this.id(data.id || '');
+    this.lang(data.lang || '');
     this.style(data.style || '');
     this.tag(data.tag || '');
     this.title(data.title || '');
   }
   
   /**
-   * Helper method for adding a class.
-   * @signature addClass(string) Add class (string) to classes
-   * @return This object for call chaining
+   * @signature addClass(class)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param class string
+   * @returns this
+   * @description Adds a new CSS class to the element.
    */
   addClass(arg1) {
     const classes = arg1.split(' ');
@@ -45,8 +50,10 @@ class Element extends child.Child {
       }
       
       /** Handle errors */
-      else {
-        throw new TypeError(`${this.constructor.name}.addClass(): Invalid signature (${typeof arg1}).`);
+      else if ( arg1 === null ) {
+        throw new TypeError(`${this.constructor.name}.open(null): Invalid signature.`);
+      } else {
+        throw new TypeError(`${this.constructor.name}.open(${arg1.constructor.name}): Invalid signature.`);
       }
     });
                     
@@ -55,33 +62,47 @@ class Element extends child.Child {
   }
   
   /**
-   * Attributes getter/setter.
-   * @signature attributes() Get the attributes
-   * @signature attributes(object[Array]) Set the attributes as (object[Array])
-   * @return This object for call chaining
+   * @signature attributes()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns Array
+   * @description Gets the [Array] of key/value pairs that comproises the attributes of this element.
+   *
+   * @signature attributes(attributeArray)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param attributeArray Array
+   * @returns this
+   * @throws TypeError if `attributeArray` is not a valid [Array]
+   * @description Sets the [Array] of key/value pairs that comproises the attributes of this element.
    */
   attributes(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._attributes;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
-      this._attributes = arg1; 
-    
+      this._attributes = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.attributes(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.attributes(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.attributes(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Helper method for getting/setting attributes.
-   * @signature attr(string) Get the attribute with key (string)
-   * @signature attr(string, string|number|boolean) Set the attribute with key (string) as (string|number|boolean)
-   * @return This object for call chaining
+   * @signature attr(key, value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param key string
+   * @param value string|number|boolean
+   * @returns this
+   * @description Add a new key/value attribute to the element.
    */
   attr(arg1, arg2) {
     /** Getter */
@@ -97,8 +118,12 @@ class Element extends child.Child {
     }
     
     /** Handle errors */
-    else {
-      throw new TypeError(`${this.constructor.name}.attr(): Invalid signature (${typeof arg1}, ${typeof arg2}).`);
+    else if ( arg1 === null && arg2 === null ) {
+      throw new TypeError(`${this.constructor.name}.attributes(null, null): Invalid signature.`);
+    } else if ( arg2 === null ) {
+      throw new TypeError(`${this.constructor.name}.attributes(${arg1.constructor.name}, null): Invalid signature.`);
+    } else {
+      throw new TypeError(`${this.constructor.name}.attributes(${arg1.constructor.name}, ${arg2.constructor.name}): Invalid signature.`);
     }
     
     /** Allow for call chaining */
@@ -106,10 +131,19 @@ class Element extends child.Child {
   }
   
   /**
-   * Classes getter/setter.
-   * @signature classes() Get the classes
-   * @signature classes(string) Set the classes as (string)
-   * @return This object for call chaining
+   * @signature classes()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns Array
+   * @description Gets the [Array] of CSS classes applied to this element.
+   *
+   * @signature classes(classArray)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param classArray Array
+   * @returns this
+   * @throws TypeError if `classArray` is not a valid [Array]
+   * @description Sets the [Array] of CSS classes applied to this element.
    */
   classes(arg1) {
     /** Getter */
@@ -129,32 +163,82 @@ class Element extends child.Child {
   }
   
   /**
-   * ID getter/setter.
-   * @signature id() Get the ID
-   * @signature id(string) Set the ID as (string)
-   * @return This object for call chaining
+   * @signature id()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the id attribute of the element.
+   *
+   * @signature id(elementId)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param elementId string
+   * @returns this
+   * @throws TypeError if `elementId` is not a valid [string]
+   * @description Sets the id attribute of the element.
    */
   id(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._id;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._id = arg1; 
-    
+      this._id = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.id(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.id(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.id(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Helper method for removing a class.
-   * @signature removeClass(string) Remove class (string) from classes
-   * @return This object for call chaining
+   * @signature lang()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the primary language of the element’s contents and for any of the element’s attributes 
+   * that contain text. Its value must be a valid BCP 47 language tag, or the empty string.
+   *
+   * @signature lang(tag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param tag string
+   * @returns this
+   * @throws TypeError if `tag` is not a valid [string]
+   * @description Sets the primary language of the element’s contents and for any of the element’s attributes 
+   * that contain text. Its value must be a valid BCP 47 language tag, or the empty string.
+   */
+  lang(arg1) {
+    /** Getter */
+    if ( arg1 === undefined )
+      return this._lang;
+
+    /** Setter */
+    else if ( typeof arg1 == 'string' )
+      this._lang= arg1;
+
+    /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.lang(null): Invalid signature.`);
+    else
+      throw new TypeError(`${this.constructor.name}.lang(${arg1.constructor.name}): Invalid signature.`);
+
+    /** Allow for call chaining */
+    return this;
+  }
+  
+  /**
+   * @signature removeClass(class)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param class string
+   * @returns this
+   * @description Removes a CSS class from the element.
    */
   removeClass(arg1) {
     /** Remove class from classes if it doesn't already exist */
@@ -171,72 +255,105 @@ class Element extends child.Child {
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Style getter/setter.
-   * @signature style() Get the style
-   * @signature style(string) Set the style as (string)
-   * @return This object for call chaining
+   * @signature style()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the list of styles in the style attribute of the element.
+   *
+   * @signature style(styleList)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param styleList string
+   * @returns this
+   * @throws TypeError if `styleList` is not a valid [string]
+   * @description Sets the list of styles in the style attribute of the element.
    */
   style(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._style;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._style = arg1; 
-    
+      this._style = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.style(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.style(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.style(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Tag getter/setter.
-   * @signature tag() Get the tag
-   * @signature tag(string) Set the tag as (string)
-   * @return This object for call chaining
+   * @signature tag()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the tag attribute of the element.
+   *
+   * @signature tag(tag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param tag string
+   * @returns this
+   * @throws TypeError if `tag` is not a valid [string]
+   * @description Sets the tag attribute of the element.
    */
   tag(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._tag;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._tag = arg1; 
-    
+      this._tag = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.tag(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.tag(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.tag(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Title getter/setter.
-   * @signature title() Get the title
-   * @signature title(string) Set the title as (string)
-   * @return This object for call chaining
+   * @signature title()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the title attribute of the element.
+   *
+   * @signature title(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Sets the title attribute of the element.
    */
   title(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._title;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._title = arg1; 
-    
+      this._title = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.title(null): Invalid signature.`);
     else
-      throw new TypeError(`${this.constructor.name}.title(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.title(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
@@ -254,6 +371,9 @@ class Element extends child.Child {
   
     if ( this.id().length > 0 )
       this.attr('id', this.id());
+    
+    if ( this.lang().length > 0 )
+      this.attr('lang', this.lang());
     
     if ( this.style().length > 0 )
       this.attr('style', this.style());

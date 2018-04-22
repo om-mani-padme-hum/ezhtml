@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Progress
+ * @class ezhtml.Progress
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML progress elements.
@@ -26,47 +27,69 @@ class Progress extends containerElement.ContainerElement {
   }
 
   /**
-   * Max value getter/setter.
-   * @signature max() Get the max value
-   * @signature max(number) Set the max value as (number)
-   * @return This object for call chaining
+   * @signature max()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the maximum value of the progress bar.
+   *
+   * @signature max(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the maximum value of the progress bar.
    */
   max(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._max;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._max = arg1; 
-    
+      this._max = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.max(null): Invalid signature.`);
     else
-      throw new TypeError(`Progress.max(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.max(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Value getter/setter.
-   * @signature value() Get the value
-   * @signature value(number) Set the value as (number)
-   * @return This object for call chaining
+   * @signature value()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the current value of the progress bar.
+   *
+   * @signature value(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the current value of the progress bar.
    */
   value(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._value;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._value = arg1; 
-    
+      this._value = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.value(null): Invalid signature.`);
     else
-      throw new TypeError(`Progress.value(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.value(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

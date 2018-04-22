@@ -2,7 +2,7 @@
 const element = require('./element');
 
 /**
- * @class LineBreak
+ * @class ezhtml.LineBreak
  * @extends Element
  * @added v0.1.0
  * @author Rich Lowe

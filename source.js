@@ -2,9 +2,10 @@
 const element = require('./element');
 
 /**
- * @class Source
+ * @class ezhtml.Source
  * @extends Element
  * @added v0.1.0
+ * @added v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML source elements.
@@ -29,116 +30,171 @@ class Source extends element.Element {
   }
   
   /**
-   * Media getter/setter.
-   * @signature media() Get the media
-   * @signature media(string) Set the media as (string)
-   * @return This object for call chaining
+   * @signature media()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets a valid media query that would normally be defined in a CSS.
+   *
+   * @signature media(query)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param query string
+   * @returns this
+   * @throws TypeError if `query` is not a valid [string]
+   * @description Sets a valid media query that would normally be defined in a CSS.
    */
   media(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._media;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._media = arg1; 
-    
+      this._media = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.media(null): Invalid signature.`);
     else
-      throw new TypeError(`Source.media(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.media(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Sizes getter/setter.
-   * @signature sizes() Get the sizes
-   * @signature sizes(string) Set the sizes as (string)
-   * @return This object for call chaining
+   * @signature sizes()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the image sizes for different page layouts.
+   *
+   * @signature sizes(sizes)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param sizes string
+   * @returns this
+   * @throws TypeError if `sizes` is not a valid [string]
+   * @description Sets the image sizes for different page layouts.
    */
   sizes(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._sizes;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._sizes = arg1; 
-    
+      this._sizes = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.sizes(null): Invalid signature.`);
     else
-      throw new TypeError(`Source.sizes(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.sizes(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source getter/setter.
-   * @signature src() Get the source
-   * @signature src(string) Set the source as (string)
-   * @return This object for call chaining
+   * @signature src()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of the media file, required when used in an [Audio] or [Source] element.
+   *
+   * @signature src(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of the media file, required when used in an [Audio] or [Source] element.
    */
   src(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._src;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._src = arg1; 
-    
+      this._src = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.src(null): Invalid signature.`);
     else
-      throw new TypeError(`Source.src(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.src(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source set getter/setter.
-   * @signature srcset() Get the source set
-   * @signature srcset(string) Set the source set as (string)
-   * @return This object for call chaining
+   * @signature srcset()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URLs of the image to use in different situations.
+   *
+   * @signature srcset(urls)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param urls string
+   * @returns this
+   * @throws TypeError if `urls` is not a valid [string]
+   * @description Sets the URLs of the image to use in different situations.
    */
   srcset(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._srcset;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._srcset = arg1; 
-    
+      this._srcset = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.srcset(null): Invalid signature.`);
     else
-      throw new TypeError(`Source.srcset(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.srcset(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the MIME-type of the resource.
+   *
+   * @signature type(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets the MIME-type of the resource.
    */
   type(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._type;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._type = arg1; 
-    
+      this._type = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
     else
-      throw new TypeError(`Source.type(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

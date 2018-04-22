@@ -109,7 +109,7 @@ const video = require('./video');
 const wordBreakOpportunity = require('./word-break-opportunity');
 
 /** 
- * @module tidy-html
+ * @module ezhtml
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description A simple library for programatically rendering HTML and client-side JavaScript using Node.js.

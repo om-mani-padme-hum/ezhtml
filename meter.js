@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Meter
+ * @class ezhtml.Meter
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML meter elements.
@@ -31,162 +32,239 @@ class Meter extends containerElement.ContainerElement {
   }
   
   /**
-   * Form getter/setter.
-   * @signature form() Get the form
-   * @signature form(string) Set the form as (string)
-   * @return This object for call chaining
+   * @signature form()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the id of the form that this meter belongs to.
+   *
+   * @signature form(formId)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param formId string
+   * @returns this
+   * @throws TypeError if `formId` is not a valid [string]
+   * @description Sets the id of the form that this meter belongs to.
    */
   form(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._form;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._form = arg1; 
-    
+      this._form = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.form(null): Invalid signature.`);
     else
-      throw new TypeError(`Meter.form(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.form(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * High getter/setter.
-   * @signature high() Get the high
-   * @signature high(number) Set the high as (number)
-   * @return This object for call chaining
+   * @signature high()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the range that is considered to be a high value.
+   *
+   * @signature high(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the range that is considered to be a high value.
    */
   high(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._high;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._high = arg1; 
-    
+      this._high = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.high(null): Invalid signature.`);
     else
-      throw new TypeError(`Meter.high(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.high(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Low getter/setter.
-   * @signature low() Get the low
-   * @signature low(number) Set the low as (number)
-   * @return This object for call chaining
+   * @signature low()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the range that is considered to be a low value.
+   *
+   * @signature low(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the range that is considered to be a low value.
    */
   low(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._low;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._low = arg1; 
-    
+      this._low = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.low(null): Invalid signature.`);
     else
-      throw new TypeError(`Meter.low(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.low(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Max value getter/setter.
-   * @signature max() Get the max value
-   * @signature max(number) Set the max value as (number)
-   * @return This object for call chaining
+   * @signature max()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the maximum value of the range.
+   *
+   * @signature max(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the maximum value of the range.
    */
   max(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._max;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._max = arg1; 
-    
+      this._max = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.max(null): Invalid signature.`);
     else
-      throw new TypeError(`Meter.max(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.max(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Min value getter/setter.
-   * @signature min() Get the min value
-   * @signature min(number) Set the min value as (number)
-   * @return This object for call chaining
+   * @signature min()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the minimum value of the range.
+   *
+   * @signature min(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the minimum value of the range.
    */
   min(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._min;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._min = arg1; 
-    
+      this._min = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.min(null): Invalid signature.`);
     else
-      throw new TypeError(`Meter.min(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.min(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Step getter/setter.
-   * @signature optimum() Get the optimum
-   * @signature optimum(number) Set the optimum as (number)
-   * @return This object for call chaining
+   * @signature optimum()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the optimal value for the gauge.
+   *
+   * @signature optimum(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the optimal value for the gauge.
    */
   optimum(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._optimum;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._optimum = arg1; 
-    
+      this._optimum = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.optimum(null): Invalid signature.`);
     else
-      throw new TypeError(`Meter.optimum(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.optimum(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Value getter/setter.
-   * @signature value() Get the value
-   * @signature value(number) Set the value as (number)
-   * @return This object for call chaining
+   * @signature value()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns number
+   * @description Gets the current value of the gauge.
+   *
+   * @signature value(value)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param value number
+   * @returns this
+   * @throws TypeError if `value` is not a valid [number]
+   * @description Sets the current value of the gauge.
    */
   value(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._value;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'number' )
-      this._value = arg1; 
-    
+      this._value = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.value(null): Invalid signature.`);
     else
-      throw new TypeError(`Meter.value(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.value(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

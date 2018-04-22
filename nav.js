@@ -2,7 +2,7 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Nav
+ * @class ezhtml.Nav
  * @extends Element
  * @added v0.1.0
  * @author Rich Lowe

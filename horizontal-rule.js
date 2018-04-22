@@ -2,7 +2,7 @@
 const element = require('./element');
 
 /**
- * @class HorizontalRule
+ * @class ezhtml.HorizontalRule
  * @extends Element
  * @added v0.1.0
  * @author Rich Lowe

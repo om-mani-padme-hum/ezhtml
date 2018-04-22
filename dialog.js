@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Dialog
+ * @class ezhtml.Dialog
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML dialog elements.
@@ -25,24 +26,35 @@ class Dialog extends containerElement.ContainerElement {
   }
   
   /**
-   * Open boolean getter/setter.
-   * @signature open() Get the open boolean
-   * @signature open(boolean) Set the open boolean as (boolean)
-   * @return This object for call chaining
+   * @signature open()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the dialog should already be open when the page loads.
+   *
+   * @signature open(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the dialog should already be open when the page loads.
    */
   open(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._open;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._open = arg1; 
-    
+      this._open = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.open(null): Invalid signature.`);
     else
-      throw new TypeError(`Dialog.open(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.open(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

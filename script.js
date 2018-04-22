@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Script
+ * @class ezhtml.Script
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML script elements.
@@ -30,116 +31,171 @@ class Script extends containerElement.ContainerElement {
   }
   
   /**
-   * Async boolean getter/setter.
-   * @signature asyncScript() Get the async boolean
-   * @signature asyncScript(boolean) Set the async boolean as (boolean)
-   * @return This object for call chaining
+   * @signature asyncScript()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the script should be executed asynchronously (only for external scripts).
+   *
+   * @signature asyncScript(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the script should be executed asynchronously (only for external scripts).
    */
   asyncScript(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._asyncScript;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._asyncScript = arg1; 
-    
+      this._asyncScript = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.asyncScript(null): Invalid signature.`);
     else
-      throw new TypeError(`Script.asyncScript(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.asyncScript(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
 
   /**
-   * Charset getter/setter.
-   * @signature charset() Get the charset
-   * @signature charset(string) Set the charset as (string)
-   * @return This object for call chaining
+   * @signature charset()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the character encoding used by the script.
+   *
+   * @signature charset(encoding)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param encoding string
+   * @returns this
+   * @throws TypeError if `encoding` is not a valid [string]
+   * @description Sets the character encoding used by the script.
    */
   charset(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._charset;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._charset = arg1; 
-    
+      this._charset = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.charset(null): Invalid signature.`);
     else
-      throw new TypeError(`Script.charset(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.charset(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Defer boolean getter/setter.
-   * @signature defer() Get the defer boolean
-   * @signature defer(boolean) Set the defer boolean as (boolean)
-   * @return This object for call chaining
+   * @signature defer()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns boolean
+   * @description Gets a boolean indicating whether the script should be executed when the page has finished parsing (only for external scripts).
+   *
+   * @signature defer(flag)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param flag boolean
+   * @returns this
+   * @throws TypeError if `flag` is not a valid [boolean]
+   * @description Sets a boolean indicating whether the script should be executed when the page has finished parsing (only for external scripts).
    */
   defer(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._defer;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'boolean' )
-      this._defer = arg1; 
-    
+      this._defer = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.defer(null): Invalid signature.`);
     else
-      throw new TypeError(`Script.defer(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.defer(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Source getter/setter.
-   * @signature src() Get the source
-   * @signature src(string) Set the source as (string)
-   * @return This object for call chaining
+   * @signature src()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the URL of the external script file.
+   *
+   * @signature src(url)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param url string
+   * @returns this
+   * @throws TypeError if `url` is not a valid [string]
+   * @description Sets the URL of the external script file.
    */
   src(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._src;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._src = arg1; 
-    
+      this._src = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.src(null): Invalid signature.`);
     else
-      throw new TypeError(`Script.src(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.src(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
-  
+
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the media type of the script.
+   *
+   * @signature type(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets the media type of the script.
    */
   type(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._type;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._type = arg1; 
-    
+      this._type = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
     else
-      throw new TypeError(`Script.type(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }

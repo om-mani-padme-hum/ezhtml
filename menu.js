@@ -2,9 +2,10 @@
 const containerElement = require('./container-element');
 
 /**
- * @class Menu
+ * @class ezhtml.Menu
  * @extends ContainerElement
  * @added v0.1.0
+ * @updated v0.2.0
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML menu elements.
@@ -26,47 +27,69 @@ class Menu extends containerElement.ContainerElement {
   }
   
   /**
-   * Label getter/setter.
-   * @signature label() Get the label
-   * @signature label(string) Set the label as (string)
-   * @return This object for call chaining
+   * @signature label()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the name of the menu, as shown to the user.
+   *
+   * @signature label(text)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param text string
+   * @returns this
+   * @throws TypeError if `text` is not a valid [string]
+   * @description Sets the name of the menu, as shown to the user.
    */
   label(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._label;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._label = arg1; 
-    
+      this._label = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.label(null): Invalid signature.`);
     else
-      throw new TypeError(`Menu.label(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.label(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
   
   /**
-   * Type getter/setter.
-   * @signature type() Get the type
-   * @signature type(string) Set the type as (string)
-   * @return This object for call chaining
+   * @signature type()
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @returns string
+   * @description Gets the type of menu, can be `list`, `toolbar`, `context`.
+   *
+   * @signature type(type)
+   * @added v0.1.0
+   * @updated v0.2.0
+   * @param type string
+   * @returns this
+   * @throws TypeError if `type` is not a valid [string]
+   * @description Sets the type of menu, can be `list`, `toolbar`, `context`.
    */
   type(arg1) {
     /** Getter */
     if ( arg1 === undefined )
       return this._type;
-    
+
     /** Setter */
     else if ( typeof arg1 == 'string' )
-      this._type = arg1; 
-    
+      this._type = arg1;
+
     /** Handle errors */
+    else if ( arg1 === null )
+      throw new TypeError(`${this.constructor.name}.type(null): Invalid signature.`);
     else
-      throw new TypeError(`Menu.type(): Invalid signature (${typeof arg1}).`);
-    
+      throw new TypeError(`${this.constructor.name}.type(${arg1.constructor.name}): Invalid signature.`);
+
     /** Allow for call chaining */
     return this;
   }
