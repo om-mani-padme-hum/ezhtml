@@ -574,9 +574,10 @@ class Input extends element.Element {
    * @signature max(value)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param value string
+   * @updated v0.3.0
+   * @param value string|number
    * @returns this
-   * @throws TypeError if `value` is not a valid [string]
+   * @throws TypeError if `value` is not a valid [string|number]
    * @description Sets the maximum value for ths input.
    */
   max(arg1) {
@@ -585,8 +586,8 @@ class Input extends element.Element {
       return this._max;
 
     /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._max = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._max = arg1.toString();
 
     /** Handle errors */
     else if ( arg1 === null )
@@ -608,9 +609,10 @@ class Input extends element.Element {
    * @signature maxlength(value)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param value string
+   * @updated v0.3.0
+   * @param value string|number
    * @returns this
-   * @throws TypeError if `value` is not a valid [string]
+   * @throws TypeError if `value` is not a valid [string|number]
    * @description Sets the maximum length of characters allowed for ths input.
    */
   maxlength(arg1) {
@@ -619,8 +621,8 @@ class Input extends element.Element {
       return this._maxlength;
 
     /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._maxlength = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._maxlength = arg1.toString();
 
     /** Handle errors */
     else if ( arg1 === null )
@@ -642,9 +644,10 @@ class Input extends element.Element {
    * @signature min(value)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param value string
+   * @updated v0.3.0
+   * @param value string|number
    * @returns this
-   * @throws TypeError if `value` is not a valid [string]
+   * @throws TypeError if `value` is not a valid [string|number]
    * @description Sets the minimum value for ths input.
    */
   min(arg1) {
@@ -653,8 +656,8 @@ class Input extends element.Element {
       return this._min;
 
     /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._min = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._min = arg1.toString();
 
     /** Handle errors */
     else if ( arg1 === null )
@@ -880,9 +883,10 @@ class Input extends element.Element {
    * @signature size(size)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param size number
+   * @updated v0.3.0
+   * @param size string|number
    * @returns this
-   * @throws TypeError if `size` is not a valid [number]
+   * @throws TypeError if `size` is not a valid [string|number]
    * @description Sets the size of this input in characters.
    */
   size(arg1) {
@@ -891,8 +895,8 @@ class Input extends element.Element {
       return this._size;
 
     /** Setter */
-    else if ( typeof arg1 == 'number' )
-      this._size = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._size = parseInt(arg1);
 
     /** Handle errors */
     else if ( arg1 === null )
@@ -948,9 +952,10 @@ class Input extends element.Element {
    * @signature step(value)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param value number
+   * @updated v0.3.0
+   * @param value string|number
    * @returns this
-   * @throws TypeError if `value` is not a valid [number]
+   * @throws TypeError if `value` is not a valid [string|number]
    * @description Sets the step value for ths input.
    */
   step(arg1) {
@@ -959,8 +964,8 @@ class Input extends element.Element {
       return this._step;
 
     /** Setter */
-    else if ( typeof arg1 == 'number' )
-      this._step = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._step = parseInt(arg1);
 
     /** Handle errors */
     else if ( arg1 === null )
