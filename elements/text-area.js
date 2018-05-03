@@ -81,9 +81,10 @@ class TextArea extends containerElement.ContainerElement {
    * @signature cols(columns)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param columns number
+   * @updated v0.3.2
+   * @param columns string|number
    * @returns this
-   * @throws TypeError if `columns` is not a valid [number]
+   * @throws TypeError if `columns` is not a valid [string|number]
    * @description Sets the number of characters per row in the text area.
    */
   cols(arg1) {
@@ -92,8 +93,8 @@ class TextArea extends containerElement.ContainerElement {
       return this._cols;
 
     /** Setter */
-    else if ( typeof arg1 == 'number' )
-      this._cols = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._cols = parseInt(arg1);
 
     /** Handle errors */
     else if ( arg1 === null )
@@ -217,9 +218,10 @@ class TextArea extends containerElement.ContainerElement {
    * @signature maxlength(value)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param value string
+   * @updated v0.3.2
+   * @param value string|number
    * @returns this
-   * @throws TypeError if `value` is not a valid [string]
+   * @throws TypeError if `value` is not a valid [string|number]
    * @description Sets the maximum length of characters allowed for ths input.
    */
   maxlength(arg1) {
@@ -228,8 +230,8 @@ class TextArea extends containerElement.ContainerElement {
       return this._maxlength;
 
     /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._maxlength = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._maxlength = arg1.toString();
 
     /** Handle errors */
     else if ( arg1 === null )
@@ -387,9 +389,10 @@ class TextArea extends containerElement.ContainerElement {
    * @signature rows(value)
    * @added v0.1.0
    * @updated v0.2.0
-   * @param value number
+   * @updated v0.3.2
+   * @param value string|number
    * @returns this
-   * @throws TypeError if `value` is not a valid [number]
+   * @throws TypeError if `value` is not a valid [string|number]
    * @description Sets the number of rows that should be visible in this text area at any given time.
    */
   rows(arg1) {
@@ -398,8 +401,8 @@ class TextArea extends containerElement.ContainerElement {
       return this._rows;
 
     /** Setter */
-    else if ( typeof arg1 == 'number' )
-      this._rows = arg1;
+    else if ( typeof arg1 == 'string' || typeof arg1 == 'number' )
+      this._rows = parseInt(arg1);
 
     /** Handle errors */
     else if ( arg1 === null )
