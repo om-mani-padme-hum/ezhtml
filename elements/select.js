@@ -22,7 +22,7 @@ class Select extends containerElement.ContainerElement {
   constructor(data = {}) {
     super(data);
     
-    this.allowedContent(['OptGroup', 'Option']);
+    this.allowedContent(['OptionGroup', 'Option']);
     this.autofocus(data.autofocus || false);
     this.disabled(data.disabled || false);
     this.form(data.form || '');
