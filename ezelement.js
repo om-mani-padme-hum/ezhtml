@@ -20,14 +20,14 @@ module.exports.createClass = function (config) {
       } else if ( property.type == 'number' ) {
         if ( this[property.name]() > 0 )
           this.attr(property.name, this[property.name]());
-      } else if ( property.type == 'string|number' || property.type == 'number|string' ) {
+      } else if ( property.type.split(`|`).includes(`number`) && property.type.split(`|`).includes(`string`) ) {
         if ( parseFloat(this[property.name]()) == this[property.name]() && this[property.name]() > 0 )
           this.attr(property.name, parseFloat(this[property.name]()));
         else
           this.attr(property.name, this[property.name]());
       } else if ( property.type == 'boolean' ) {
         if ( this[property.name]() )
-          this.attr(propery.name, true);
+          this.attr(property.name, true);
       }
     });
     

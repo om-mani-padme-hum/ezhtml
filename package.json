@@ -32,6 +32,6 @@
     "docket-parser": "^0.6.7"
   },
   "dependencies": {
-    "ezobjects": "^2.10.6"
+    "ezobjects": "^2.11.1"
   }
 }
