@@ -1,4 +1,4 @@
-# EZHTML v1.0.1
+# EZHTML v1.0.2
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -326,11 +326,11 @@ div2.append(new ezhtml.Text().text('it, though who knows how it will come out on
 div2.append(new ezhtml.LineBreak());
 
 fs.writeFileSync('example.html', html.render());
+```
 
 ## Example Output
 
 ```
-
 <html>
   <head>
     <title>
