@@ -1,6 +1,3 @@
-/** Require local modules */
-const containerElement = require('./container-element');
-
 /**
  * @class ezhtml.Inserted
  * @extends ContainerElement
@@ -9,110 +6,68 @@ const containerElement = require('./container-element');
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML inserted elements.
+ *
+ * @signature new Inserted([data])
+ * @added v0.1.0
+ * @param data Object
+ * @returns Inserted
+ * @description Returns a new [Inserted] instance, initializing with any key/value pairs provided in `data` with keys 
+ * that match setter method names.
+ *
+ * @signature cite()
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @returns string
+ * @description Gets a URL to a document that explains the reason why the text was inserted.
+ *
+ * @signature cite(url)
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @param url string
+ * @returns this
+ * @throws TypeError if `url` is not a valid [string]
+ * @description Sets a URL to a document that explains the reason why the text was inserted.
+ *
+ * @signature datetime()
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @returns string
+ * @description Gets the date and time of when the text was inserted.
+ *
+ * @signature datetime(datetime)
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @param datetime string Required format: YYYY-MM-DDThh:mm:ssTZD
+ * @returns this
+ * @throws TypeError if `datetime` is not a valid [string]
+ * @description Sets the date and time of when the text was inserted.
+ *
+ * @signature render(indent) 
+ * @added v0.1.0
+ * @param indent number
+ * @return string Rendered HTML
+ * @description Render this element with `indent` spaces of indentation before each line.
  */
-class Inserted extends containerElement.ContainerElement {
-  /**
-   * @signature new Inserted([data])
-   * @added v0.1.0
-   * @param data Object
-   * @returns Inserted
-   * @description Returns a new [Inserted] instance, initializing with any key/value pairs provided in `data` with keys 
-   * that match setter method names.
-   */
-  constructor(data = {}) {
-    super(data);
-    
-    this.allowedContent(['Text']);
-    this.cite(data.cite || '');
-    this.datetime(data.datetime || '');
-  }
-  
-  /**
-   * @signature cite()
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @returns string
-   * @description Gets a URL to a document that explains the reason why the text was inserted.
-   *
-   * @signature cite(url)
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @param url string
-   * @returns this
-   * @throws TypeError if `url` is not a valid [string]
-   * @description Sets a URL to a document that explains the reason why the text was inserted.
-   */
-  cite(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._cite;
 
-    /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._cite = arg1;
+/** Require local modules */
+const containerElement = require('./container-element');
+const ezelement = require('../ezelement');
 
-    /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.cite(null): Invalid signature.`);
-    else
-      throw new TypeError(`${this.constructor.name}.cite(${arg1.constructor.name}): Invalid signature.`);
+/** Create the ezelement class configuration */
+const config = {
+  className: 'Inserted',
+  tag: 'ins',
+  extends: containerElement.ContainerElement,
+  extendsConfig: containerElement.config,
+  properties: [
+    { name: 'cite', type: 'string' },
+    { name: 'datetime', type: 'string' }
+  ]
+};
 
-    /** Allow for call chaining */
-    return this;
-  }
-  
-  /**
-   * @signature datetime()
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @returns string
-   * @description Gets the date and time of when the text was inserted.
-   *
-   * @signature datetime(datetime)
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @param datetime string Required format: YYYY-MM-DDThh:mm:ssTZD
-   * @returns this
-   * @throws TypeError if `datetime` is not a valid [string]
-   * @description Sets the date and time of when the text was inserted.
-   */
-  datetime(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._datetime;
+/** Create the class */
+ezelement.createClass(config);
 
-    /** Setter */
-    else if ( typeof arg1 == 'string' )
-      this._datetime = arg1;
-
-    /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.datetime(null): Invalid signature.`);
-    else
-      throw new TypeError(`${this.constructor.name}.datetime(${arg1.constructor.name}): Invalid signature.`);
-
-    /** Allow for call chaining */
-    return this;
-  }
-  
-  /**
-   * @signature render(indent) 
-   * @added v0.1.0
-   * @param indent number
-   * @return string Rendered HTML
-   * @description Render this element with `indent` spaces of indentation before each line.
-   */
-  render(indent) {
-    if ( this.cite().length > 0 )
-      this.attr('cite', this.cite());
-    
-    if ( this.datetime().length > 0 )
-      this.attr('datetime', this.datetime());
-    
-    this.tag('ins');
-    
-    return super.render(indent);
-  }
-}
-
+/** Export the class and class config */
 module.exports.Inserted = Inserted;
+module.exports.config = config;

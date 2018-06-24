@@ -1,6 +1,3 @@
-/** Require local modules */
-const containerElement = require('./container-element');
-
 /**
  * @class ezhtml.SVG
  * @extends ContainerElement
@@ -9,109 +6,68 @@ const containerElement = require('./container-element');
  * @author Rich Lowe
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML SVG elements.
+ *
+ * @signature new SVG([data])
+ * @added v0.1.0
+ * @param data Object
+ * @returns SVG
+ * @description Returns a new [SVG] instance, initializing with any key/value pairs provided in `data` with keys 
+ * that match setter method names.
+ *
+ * @signature height()
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @returns number
+ * @description Gets the height of the SVG in pixels.
+ *
+ * @signature height(pixels)
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @param pixels number
+ * @returns this
+ * @throws TypeError if `pixels` is not a valid [number]
+ * @description Sets the height of the SVG in pixels.
+ *
+ * @signature render(indent) 
+ * @added v0.1.0
+ * @param indent number
+ * @return string Rendered HTML
+ * @description Render this element with `indent` spaces of indentation before each line.
+ *
+ * @signature width()
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @returns number
+ * @description Gets the width of the SVG in pixels.
+ *
+ * @signature width(pixels)
+ * @added v0.1.0
+ * @updated v0.2.0
+ * @param pixels number
+ * @returns this
+ * @throws TypeError if `pixels` is not a valid [number]
+ * @description Sets the width of the SVG in pixels.
  */
-class SVG extends containerElement.ContainerElement {
-  /**
-   * @signature new SVG([data])
-   * @added v0.1.0
-   * @param data Object
-   * @returns SVG
-   * @description Returns a new [SVG] instance, initializing with any key/value pairs provided in `data` with keys 
-   * that match setter method names.
-   */
-  constructor(data = {}) {
-    super(data);
-    
-    this.height(data.height || 0);
-    this.width(data.width || 0);
-  }
-  
-  /**
-   * @signature height()
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @returns number
-   * @description Gets the height of the SVG in pixels.
-   *
-   * @signature height(pixels)
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @param pixels number
-   * @returns this
-   * @throws TypeError if `pixels` is not a valid [number]
-   * @description Sets the height of the SVG in pixels.
-   */
-  height(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._height;
 
-    /** Setter */
-    else if ( typeof arg1 == 'number' )
-      this._height = arg1;
+/** Require local modules */
+const containerElement = require('./container-element');
+const ezelement = require('../ezelement');
 
-    /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.height(null): Invalid signature.`);
-    else
-      throw new TypeError(`${this.constructor.name}.height(${arg1.constructor.name}): Invalid signature.`);
+/** Create the ezelement class configuration */
+const config = {
+  className: 'SVG',
+  tag: 'svg',
+  extends: containerElement.ContainerElement,
+  extendsConfig: containerElement.config,
+  properties: [
+    { name: 'height', type: 'number' },
+    { name: 'width', type: 'number' }
+  ]
+};
 
-    /** Allow for call chaining */
-    return this;
-  }
-  
-  /**
-   * @signature width()
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @returns number
-   * @description Gets the width of the SVG in pixels.
-   *
-   * @signature width(pixels)
-   * @added v0.1.0
-   * @updated v0.2.0
-   * @param pixels number
-   * @returns this
-   * @throws TypeError if `pixels` is not a valid [number]
-   * @description Sets the width of the SVG in pixels.
-   */
-  width(arg1) {
-    /** Getter */
-    if ( arg1 === undefined )
-      return this._width;
+/** Create the class */
+ezelement.createClass(config);
 
-    /** Setter */
-    else if ( typeof arg1 == 'number' )
-      this._width = arg1;
-
-    /** Handle errors */
-    else if ( arg1 === null )
-      throw new TypeError(`${this.constructor.name}.width(null): Invalid signature.`);
-    else
-      throw new TypeError(`${this.constructor.name}.width(${arg1.constructor.name}): Invalid signature.`);
-
-    /** Allow for call chaining */
-    return this;
-  }
-  
-  /**
-   * @signature render(indent) 
-   * @added v0.1.0
-   * @param indent number
-   * @return string Rendered HTML
-   * @description Render this element with `indent` spaces of indentation before each line.
-   */
-  render(indent) {
-    if ( this.height() > 0 )
-      this.attr('height', this.height());
-    
-    if ( this.width() > 0 )
-      this.attr('width', this.width());
-    
-    this.tag('svg');
-    
-    return super.render(indent);
-  }
-}
-
+/** Export the class and class config */
 module.exports.SVG = SVG;
+module.exports.config = config;

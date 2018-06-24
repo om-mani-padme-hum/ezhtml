@@ -6,9 +6,9 @@ const fileList = ['index.js', 'elements/abbreviation.js', 'elements/address.js',
                   'elements/child.js', 'elements/citation.js', 'elements/code.js', 'elements/column-group.js', 'elements/column.js', 'elements/container-element.js', 
                   'elements/container.js', 'elements/data-list.js', 'elements/definition-description.js', 'elements/definition-list.js', 
                   'elements/definition-term.js', 'elements/definition.js', 'elements/deleted.js', 'elements/details.js', 'elements/dialog.js', 'elements/div.js', 
-                  'elements/element.js', 'elements/embed.js', 'elements/emphasized.js', 'elements/fieldset.js', 'elements/figure-caption.js', 'elements/figure.js', 
-                  'elements/footer.js', 'elements/form.js', 'elements/head.js', 'elements/header.js', 'elements/heading-group.js', 'elements/heading.js', 
-                  'elements/horizontal-rule.js', 'elements/html.js', 'elements/image.js', 'elements/input.js', 'elements/inserted.js', 
+                  'elements/element.js', 'elements/embed.js', 'elements/emphasized.js', 'ezelement.js', 'elements/fieldset.js', 'elements/figure-caption.js', 
+                  'elements/figure.js', 'elements/footer.js', 'elements/form.js', 'elements/head.js', 'elements/header.js', 'elements/heading-group.js', 
+                  'elements/headings.js', 'elements/horizontal-rule.js', 'elements/html.js', 'elements/image.js', 'elements/input.js', 'elements/inserted.js', 
                   'elements/italic.js', 'elements/keyboard.js', 'elements/label.js', 'elements/legend.js', 'elements/line-break.js', 'elements/link.js', 
                   'elements/list-item.js', 'elements/main.js', 'elements/map.js', 'elements/mark.js', 'elements/menu-item.js', 'elements/menu.js', 'elements/meta.js', 
                   'elements/meter.js', 'elements/multimedia-object.js', 'elements/nav.js', 'elements/no-script.js', 'elements/option-group.js', 'elements/option.js', 
@@ -20,7 +20,7 @@ const fileList = ['index.js', 'elements/abbreviation.js', 'elements/address.js',
                   'elements/text.js', 'elements/time.js', 'elements/title.js', 'elements/track.js', 'elements/underline.js', 'elements/unordered-list.js', 'elements/variable.js', 
                   'elements/video.js', 'elements/word-break-opportunity.js', ];
 
-docket.title('EZHTML v0.3.4 Documentation');
+docket.title('EZHTML v1.0.0 Documentation');
 docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
