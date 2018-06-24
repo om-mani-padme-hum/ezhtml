@@ -54,7 +54,7 @@ app.listen(8080);
 ## Included `example.js` Module Testing Example
 
 ```javascript
-const ezhtml = require('ezhtml);
+const ezhtml = require('ezhtml');
 const fs = require('fs');
 
 const html = new ezhtml.HTML();
