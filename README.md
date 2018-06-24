@@ -1,4 +1,4 @@
-# EZHTML v1.0.0
+# EZHTML v1.0.1
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -6,7 +6,7 @@ the rendered output.  This module will not directly be a time saving 'shorthand'
 rather it provides the library of objects that will allow you to programatically write your own
 functionalized web site design logic that will save you loads of time writing your own style of
 web sites.  This module was originally developed as the foundation for 
-[Strapped] (https://github.com/om-mani-padme-hum/strapped) which seeks to provide a short-hand
+[Strapped](https://github.com/om-mani-padme-hum/strapped) which seeks to provide a short-hand
 JavaScript impelementation of Bootstrap 4 web design.
 
 ## Installation
@@ -16,7 +16,7 @@ JavaScript impelementation of Bootstrap 4 web design.
 ## Current Status
 
 Fully functional, and code base now reduced by over 65% due to conversion to 
-[EZ Objects] (https://github.com/om-mani-padme-hum/ezobjects).  All HTML 5 elements and 
+[EZ Objects](https://github.com/om-mani-padme-hum/ezobjects).  All HTML 5 elements and 
 attributes have been implemented except those noted below.  There are no known bugs currently, 
 but if found they can be reported by opening an issue against the GitHub repository or by
 initiating a pull request with the fix.
