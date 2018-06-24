@@ -67,8 +67,8 @@
 const ezobjects = require('ezobjects');
 
 /** Require local modules */
-const child = require('elements/child');
-const text = require('elements/text');
+const child = require('./child');
+const text = require('./text');
 
 /** Create the ezelement class configuration */
 const config = {
@@ -78,14 +78,12 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+ezobjects.createObject(config);
 
 /** Create additional prototype methods */
 Container.prototype.append = function (arg1) {
   /** Setter */
-  if ( typeof arg1 == 'object' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf(arg1.constructor.name) !== -1 ) )
-    this._content.push(arg1);
-  else if ( typeof arg1 == 'function' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf('Function') !== -1 ) )
+  if ( typeof arg1 == 'object' || typeof arg1 == 'function' )
     this._content.push(arg1);
 
   /** Handle errors */
@@ -129,9 +127,7 @@ Container.prototype.content = function (arg1) {
 
 Container.prototype.prepend = function (arg1) {
   /** Setter */
-  if ( typeof arg1 == 'object' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf(arg1.constructor.name) !== -1 ) )
-    this._content.unshift(arg1);
-  else if ( typeof arg1 == 'function' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf('Function') !== -1 ) )
+  if ( typeof arg1 == 'object' || typeof arg1 == 'function' )
     this._content.unshift(arg1);
 
   /** Handle errors */

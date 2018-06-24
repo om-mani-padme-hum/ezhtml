@@ -147,14 +147,14 @@
 const ezobjects = require('ezobjects');
 
 /** Require local modules */
-const element = require('./element');
+const child = require('./child');
 const text = require('./text');
 
 /** Create the ezelement class configuration */
 const config = {
   className: 'Element',
-  extends: element.Element,
-  extendsConfig: element.config,
+  extends: child.Child,
+  extendsConfig: child.config,
   properties: [
     { name: 'attributes', type: 'Array' },
     { name: 'classes', type: 'string' },
@@ -167,7 +167,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+ezobjects.createObject(config);
 
 /** Create additional prototype methods */
 Element.prototype.addClass = function (arg1) {

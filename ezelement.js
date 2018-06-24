@@ -7,12 +7,12 @@ const ezobjects = require('ezobjects');
  * @description Helper method for implementing new HTML elements in EZ HTML using a shorthand
  * configuration object.
  */
-module.exports.createClass = function (config) {
+module.exports.createClass = function (config) {  
   /** Create the class */
-  ezobjects(config);
-
+  ezobjects.createObject(config);
+  
   /** Create the render function */
-  global[config.name].prototype.render = function (indent = 0) {
+  global[config.className].prototype.render = function (indent = 0) {
     config.properties.forEach((property) => {
       if ( property.type == 'string' ) {
         if ( this[property.name]().length > 0 )
@@ -29,10 +29,10 @@ module.exports.createClass = function (config) {
         if ( this[property.name]() )
           this.attr(propery.name, true);
       }
-      
-      this.tag(config.tag);
-      
-      return super.render(indent);
     });
+    
+    this.tag(config.tag);
+
+    return global[config.extendsConfig.className].prototype.render.call(this, indent);
   };
 };

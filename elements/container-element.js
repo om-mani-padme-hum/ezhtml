@@ -74,19 +74,20 @@ const text = require('./text');
 const config = {
   className: 'ContainerElement',
   extends: element.Element,
-  extendsConfig: element.config
+  extendsConfig: element.config,
+  properties: [
+    { name: 'content', type: 'Array' }
+  ]
 };
 
 /** Create the class */
-ezelement.createClass(config);
+ezobjects.createObject(config);
 
 /** Create additional prototype methods */
 ContainerElement.prototype.append = function (arg1) {
   /** Setter */
-  if ( typeof arg1 == 'object' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf(arg1.constructor.name) !== -1 ) )
-    this._content.push(arg1);
-  else if ( typeof arg1 == 'function' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf('Function') !== -1 ) )
-    this._content.push(arg1);
+  if ( typeof arg1 == 'object' || typeof arg1 == 'function' )
+    this.content().push(arg1);
 
   /** Handle errors */
   else
@@ -100,38 +101,9 @@ ContainerElement.prototype.append = function (arg1) {
   return this;
 };
 
-ContainerElement.prototype.content = function (arg1) {
-  /** Getter */
-  if ( arg1 === undefined )
-    return this._content;
-
-  /** Setter */
-  else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
-    this._content = arg1; 
-
-  /** Handle errors */
-  else if ( arg1 === null )
-    throw new TypeError(`${this.constructor.name}.content(null): Invalid signature.`);
-  else
-    throw new TypeError(`${this.constructor.name}.content(${arg1.constructor.name}): Invalid signature.`);
-
-  /** Set parent for all items */
-  const parent = this;
-
-  this._content.forEach((item) => {
-    if ( typeof item != 'function' )
-      item.parent(parent);
-  });
-
-  /** Allow for call chaining */
-  return this;
-};
-
 ContainerElement.prototype.prepend = function (arg1) {
   /** Setter */
-  if ( typeof arg1 == 'object' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf(arg1.constructor.name) !== -1 ) )
-    this._content.unshift(arg1);
-  else if ( typeof arg1 == 'function' && ( this.allowedContent().length === 0 || this.allowedContent().indexOf('Function') !== -1 ) )
+  if ( typeof arg1 == 'object' || typeof arg1 == 'function' )
     this._content.unshift(arg1);
 
   /** Handle errors */
@@ -148,9 +120,9 @@ ContainerElement.prototype.prepend = function (arg1) {
   return this;
 };
 
-ContainerElement.prototype.render = function (indent = 0) {
+ContainerElement.prototype.render = function (indent = 0) {  
   /** Mark up this element's opening (or only) tag */
-  let markup = super.render(indent);
+  let markup = element.Element.prototype.render.call(this, indent);
 
   /** Mark up any content of this element */
   this.content().forEach((content) => {

@@ -40,7 +40,7 @@ const config = {
 };
 
 /** Create the class */
-ezobjects(config);
+ezobjects.createObject(config);
 
 /** Export the class and class config */
 module.exports.Child = Child;

@@ -91,7 +91,7 @@ const config = {
     { name: 'disabled', type: 'boolean' },
     { name: 'label', type: 'string' },
     { name: 'selected', type: 'boolean' },
-    { name: 'value', type: 'string|number' }
+    { name: 'value', type: 'string' }
   ]
 };
 
