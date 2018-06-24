@@ -1,12 +1,12 @@
 const docket = require('docket-parser');
 
-const fileList = ['index.js', 'elements/abbreviation.js', 'elements/address.js', 'elements/anchor.js', 'elements/area.js', 'elements/article.js', 'elements/aside.js', 
-                  'elements/audio.js', 'elements/base.js', 'elements/bidirectional-isolation.js', 'elements/bidirectional-override.js', 
+const fileList = ['ezelement.js', 'index.js', 'elements/abbreviation.js', 'elements/address.js', 'elements/anchor.js', 'elements/area.js', 'elements/article.js', 
+                  'elements/aside.js', 'elements/audio.js', 'elements/base.js', 'elements/bidirectional-isolation.js', 'elements/bidirectional-override.js', 
                   'elements/blockquote.js', 'elements/body.js', 'elements/bold.js', 'elements/button.js', 'elements/canvas.js', 'elements/caption.js', 
                   'elements/child.js', 'elements/citation.js', 'elements/code.js', 'elements/column-group.js', 'elements/column.js', 'elements/container-element.js', 
                   'elements/container.js', 'elements/data-list.js', 'elements/definition-description.js', 'elements/definition-list.js', 
                   'elements/definition-term.js', 'elements/definition.js', 'elements/deleted.js', 'elements/details.js', 'elements/dialog.js', 'elements/div.js', 
-                  'elements/element.js', 'elements/embed.js', 'elements/emphasized.js', 'ezelement.js', 'elements/fieldset.js', 'elements/figure-caption.js', 
+                  'elements/element.js', 'elements/embed.js', 'elements/emphasized.js', 'elements/fieldset.js', 'elements/figure-caption.js', 
                   'elements/figure.js', 'elements/footer.js', 'elements/form.js', 'elements/head.js', 'elements/header.js', 'elements/heading-group.js', 
                   'elements/headings.js', 'elements/horizontal-rule.js', 'elements/html.js', 'elements/image.js', 'elements/input.js', 'elements/inserted.js', 
                   'elements/italic.js', 'elements/keyboard.js', 'elements/label.js', 'elements/legend.js', 'elements/line-break.js', 'elements/link.js', 
