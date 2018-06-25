@@ -1,4 +1,4 @@
-# EZHTML v1.0.6
+# EZHTML v1.0.7
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -12,7 +12,7 @@ JavaScript impelementation of Bootstrap 4 web design.
 * [Installation](#installation)
 * [Current Status](#current-status)
 * [Basic Example](#basic-example)
-* [Included Example.js](#included-example-js)
+* [Included Example.js](#included-examplejs)
 * [Example Output](#example-output)
 * [Usage](#usage)
 * [Method Signatures Common to All Elements](#method-signatures-common-to-all-elements)
