@@ -191,7 +191,7 @@ const config = {
     { name: 'form', type: 'string' },
     { name: 'formaction', type: 'string' },
     { name: 'formenctype', type: 'string' },
-    { name: 'formemthod', type: 'string' },
+    { name: 'formmethod', type: 'string' },
     { name: 'formnovalidate', type: 'boolean' },
     { name: 'formtarget', type: 'string' },
     { name: 'name', type: 'string' },

@@ -1,4 +1,4 @@
-# EZHTML v1.0.5
+# EZHTML v1.0.6
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -8,6 +8,18 @@ functionalized web site design logic that will save you loads of time writing yo
 web sites.  This module was originally developed as the foundation for 
 [Strapped](https://github.com/om-mani-padme-hum/strapped) which seeks to provide a short-hand
 JavaScript impelementation of Bootstrap 4 web design.
+
+* [Installation](#installation)
+* [Current Status](#current-status)
+* [Basic Example](#basic-example)
+* [Included Example.js](#included-example-js)
+* [Example Output](#example-output)
+* [Usage](#usage)
+* [Method Signatures Common to All Elements](#method-signatures-common-to-all-elements)
+* [Method Signatures Common to All Container Elements](#method-signatures-common-to-all-container-elements)
+* [Elements](#elements)
+* [Contributing](#contributing)
+* [License](#license)
 
 ## Installation
 
@@ -51,7 +63,7 @@ app.get('/', (req, res, nex) => {
 app.listen(8080);
 ```
 
-## Included `example.js` Module Testing Example
+## Included Example.js
 
 ```javascript
 const ezhtml = require('ezhtml');
@@ -691,9 +703,157 @@ fs.writeFileSync('example.html', html.render());
 </html>
 ```
 
-## Todo
+## Usage
 
-* Add remaining few global attributes to element per HTML 5 standard
+Each HTML 5 element is represented by an ES6 class and is accessible as a property of this
+module.  Each class has getter/setter methods corresponding to the various attributes
+defined for the element in the HTML 5 standard.  In addition, custom attributes can be
+set and retrieved using the `attr(name)` getter and `attr(name, value)` setter.  Elements 
+that are 'containers', i.e. they have an open and close tag, also have append() and prepend() 
+methods you can use to add other child elements.  Every element has addClass() and
+removeClass() methods which make the controlling of CSS and DOM selection easy.  A full list
+of elements and their HTML 5 properties is shown below:
+
+## Method Signatures Common to All Elements
+
+### addClass(list)
+
+* **Parameter:** list - `string`
+* **Description:** Add the class, or space delimeted list of classes, in `list` to the element.
+
+### attr(name)
+
+* **Parameter:** name - `string`
+* **Description:** Get the value of the attribute named `name`.
+
+### attr(name, value)
+
+* **Parameter:** name - `string`
+* **Parameter:** value - `string`|`number`|`boolean`
+* **Description:** Set the the attribute named `name` to `value`.
+
+### removeClass(class)
+
+* **Description:** class - `string`
+* **Description:** Remove any class named `class` from the element.
+
+### parent()
+
+* **Description:** Get the parent element of this element (or `null` if none exists).
+
+### render(\[indent])
+
+* **Parameter:** indent - `number` - (optional) Defaults to zero
+* **Description:** Get the rendered HTML of this element and all of its children, prepending
+all lines with optional `indent` spaces.
+
+### tag()
+
+* **Description:** Get the HTML tag of this element.
+
+## Method Signatures Common to All Container Elements 
+
+This includes all elements that have closing tags `</element>`.
+
+### append(element)
+
+* **Parameter:** element - `mixed` Any valid EZ HTML element
+* **Description:** Append `element` to the end of this element's array of children.
+
+### prepend(element)
+
+* **Parameter:** element - `mixed` Any valid EZ HTML element
+* **Description:** Prepend `element` to the beginning of this element's array of children.
+
+### text(content)
+
+* **Parameter:** content - `string`
+* **Description:** A shortcut method for appending plain text `content` to the end of this element's 
+children array.  This is a shortcut for append(new ezhtml.Text().text(content)).
+
+## Elements
+
+Below are the element classes included in the library along with each of their attributes that will 
+each have a getter of the form property(), and a setter of the form property(value).
+
+### new ezhtml.Abbreviation()
+* None
+
+### new ezhtml.Address()
+* None
+
+### new ezhtml.Anchor()
+* **download** - `string`
+* **href** - `string`
+* **hreflang** - `string`
+* **media** - `string`
+* **rel** - `string`
+* **target** - `string`
+* **type** - `string`
+
+### new ezhtml.Area()
+* **alt** - `string`
+* **coords** - `string`
+* **download** - `string`
+* **href** - `string`
+* **hreflang** - `string`
+* **media** - `string`
+* **shape** - `string`
+* **target** - `string`
+* **type** - `string`
+
+### new ezhtml.Article()
+* None
+
+### new ezhtml.Aside()
+* None
+
+### new ezhtml.Audio()
+* **autoplay** - `boolean`
+* **controls** - `boolean`
+* **loop** - `boolean`
+* **muted** - `boolean`
+* **preload** - `string`
+* **src** `string`
+
+### new ezhtml.Base()
+* **href** - `string`
+* **target** - `string`
+
+### new ezhtml.BidirectionalIsolation()
+* None
+
+### new ezhtml.BidirectionalOverride()
+* **dir** - `string` - Can be `ltr` or `rtl`
+
+### new ezhtml.Blockquote()
+* None
+
+### new ezhtml.Body()
+* None
+
+### new ezhtml.Bold()
+* None
+
+### new ezhtml.Button()
+* **autofocus** - `boolean`
+* **disabled** - `boolean`
+* **form** - `string`
+* **formaction** - `string`
+* **formenctype** - `string`
+* **formmethod** - `string`
+* **formnovalidate** - `boolean`
+* **formtarget** - `string`
+* **name** - `string`
+* **type** - `string`
+* **value** - `string`
+
+**Note:** The rest of this documentation will be completed soon.  06/24/2018
+
+## Contributing
+
+Please open an issue on the GitHub repository if you find any broken functionality or other bugs/errors.  Feature requests
+will also be accepted, but are not guaranteed to be implemented.
 
 ## License
 
