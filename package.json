@@ -1,6 +1,6 @@
 {
   "name": "ezhtml",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Simple HTML and Client-side JavaScript using Node.js",
   "main": "index.js",
   "scripts": {
