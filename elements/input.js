@@ -470,11 +470,11 @@ const config = {
     { name: 'formmethod', type: 'string' },
     { name: 'formnovalidate', type: 'boolean' },
     { name: 'formtarget', type: 'string' },
-    { name: 'height', type: 'number', setTransform: x => parseInt(x) },
+    { name: 'height', type: 'string|number', setTransform: x => parseInt(x) },
     { name: 'list', type: 'string' },
-    { name: 'max', type: 'string' },
-    { name: 'maxlength', type: 'number', setTransform: x => parseInt(x) },
-    { name: 'min', type: 'string' },
+    { name: 'max', type: 'string|number' },
+    { name: 'maxlength', type: 'string|number', setTransform: x => parseInt(x) },
+    { name: 'min', type: 'string|number' },
     { name: 'multiple', type: 'boolean' },
     { name: 'name', type: 'string' },
     { name: 'pattern', type: 'string' },
@@ -483,10 +483,10 @@ const config = {
     { name: 'required', type: 'boolean' },
     { name: 'size', type: 'number', setTransform: x => parseInt(x) },
     { name: 'src', type: 'string' },
-    { name: 'step', type: 'number', setTransform: x => parseInt(x) },
+    { name: 'step', type: 'string|number', setTransform: x => parseInt(x) },
     { name: 'type', type: 'string', default: 'text' },
-    { name: 'value', type: 'string' },
-    { name: 'width', type: 'number', setTransform: x => parseInt(x) }
+    { name: 'value', type: 'string|number' },
+    { name: 'width', type: 'string|number', setTransform: x => parseInt(x) }
   ]
 };
 

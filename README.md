@@ -1,4 +1,4 @@
-# EZ HTML v1.0.8
+# EZ HTML v1.0.9
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -716,38 +716,38 @@ of elements and their HTML 5 properties is shown below:
 
 ## Method Signatures Common to All Elements
 
-### addClass(list)
+### Element.addClass(list)
 
 * **Parameter:** list - `string`
 * **Description:** Add the class, or space delimeted list of classes, in `list` to the element.
 
-### attr(name)
+### Element.attr(name)
 
 * **Parameter:** name - `string`
 * **Description:** Get the value of the attribute named `name`.
 
-### attr(name, value)
+### Element.attr(name, value)
 
 * **Parameter:** name - `string`
 * **Parameter:** value - `string`|`number`|`boolean`
 * **Description:** Set the the attribute named `name` to `value`.
 
-### removeClass(class)
+### Element.removeClass(class)
 
 * **Description:** class - `string`
 * **Description:** Remove any class named `class` from the element.
 
-### parent()
+### Element.parent()
 
 * **Description:** Get the parent element of this element (or `null` if none exists).
 
-### render(\[indent])
+### Element.render(\[indent])
 
 * **Parameter:** indent - `number` - (optional) Defaults to zero
 * **Description:** Get the rendered HTML of this element and all of its children, prepending
 all lines with optional `indent` number of spaces.
 
-### tag()
+### Element.tag()
 
 * **Description:** Get the HTML tag of this element.
 
@@ -755,17 +755,17 @@ all lines with optional `indent` number of spaces.
 
 This includes all elements that have closing tags, e.g. `</element>`.
 
-### append(element)
+### ContainerElement.append(element)
 
 * **Parameter:** element - `mixed` Any valid EZ HTML element
 * **Description:** Append `element` to the end of this element's array of children.
 
-### prepend(element)
+### ContainerElement.prepend(element)
 
 * **Parameter:** element - `mixed` Any valid EZ HTML element
 * **Description:** Prepend `element` to the beginning of this element's array of children.
 
-### text(content)
+### ContainerElement.text(content)
 
 * **Parameter:** content - `string`
 * **Description:** A shortcut method for appending plain text `content` to the end of this element's 
@@ -848,7 +848,430 @@ each have a getter of the form property(), and a setter of the form property(val
 * **type** - `string`
 * **value** - `string`
 
-**Note:** The rest of this documentation will be completed soon.  06/24/2018
+### new ezhtml.Canvas()
+* **height** - `number`
+* **width** - `number`
+
+### new ezhtml.Caption()
+* None
+
+### new ezhtml.Citation()
+* None
+
+### new ezhtml.Code()
+* None
+
+### new ezhtml.ColumnGroup()
+* **span** - `number`
+
+### new ezhtml.Column()
+* **span** - `number`
+
+### new ezhtml.DataList()
+* None
+
+### new ezhtml.DefinitionDescription()
+* None
+
+### new ezhtml.DefinitionList()
+* None
+
+### new ezhtml.DefinitionTerm()
+* None
+
+### new ezhtml.Definition()
+* None
+
+### new ezhtml.Deleted()
+* **cite** - `string`
+* **datetime** - `string`
+
+### new ezhtml.Details()
+* **open** - `boolean`
+
+### new ezhtml.Dialog()
+* **open** - `boolean`
+
+### new ezhtml.Div()
+* None
+
+### new ezhtml.Embed()
+* **height** - `number`
+* **src** - `string`
+* **type** - `string`
+* **width** - `number`
+
+### new ezhtml.Emphasized()
+* None
+
+### new ezhtml.FieldSet()
+* **disabled** - `boolean`
+* **form** - `string`
+* **name** - `string`
+
+### new ezhtml.FigureCaption()
+* None
+
+### new ezhtml.Figure()
+* None
+
+### new ezhtml.Footer()
+* None
+
+### new ezhtml.Form()
+* **acceptCharset** - `string`
+* **action** - `string`
+* **autocomplete** - `string`
+* **enctype** - `string`
+* **method** - `string`
+* **name** - `string`
+* **novalidate** - `boolean`
+* **target** - `string`
+
+### new ezhtml.Head()
+* None
+
+### new ezhtml.Header()
+* None
+
+### new ezhtml.HeadingGroup()
+* None
+
+### new ezhtml.H1()
+* None
+
+### new ezhtml.H2()
+* None
+
+### new ezhtml.H3()
+* None
+
+### new ezhtml.H4()
+* None
+
+### new ezhtml.H5()
+* None
+
+### new ezhtml.H6()
+* None
+
+### new ezhtml.HorizontalRule()
+* None
+
+### new ezhtml.HTML()
+* None
+
+### new ezhtml.Image()
+* **alt** - `string`
+* **crossorigin** - `string`
+* **height** - `number`
+* **ismap** - `boolean`
+* **longdesc** - `string`
+* **sizes** - `string`
+* **src** - `string`
+* **srcset** - `string`
+* **usemap** - `string`
+* **width** - `number`
+
+### new ezhtml.Input()
+* **accept** - `string`
+* **alt** - `string`
+* **autocomplete** - `string`
+* **autofocus** - `boolean`
+* **checked** - `boolean`
+* **dirname** - `string`
+* **disabled** - `boolean`
+* **form** - `string`
+* **formaction** - `string`
+* **formenctype** - `string`
+* **formmethod** - `string`
+* **formnovalidate** - `boolean`
+* **formtarget** - `string`
+* **height** - `string|number`
+* **list** - `string`
+* **max** - `string|number`
+* **maxlength** - `string|number`
+* **min** - `string|number`
+* **multiple** - `boolean`
+* **name** - `string`
+* **pattern** - `string`
+* **placeholder** - `string`
+* **readonly** - `boolean`
+* **required** - `boolean`
+* **size** - `number`
+* **src** - `string`
+* **step** - `string|number`
+* **type** - `string` - Defaults to `text`
+* **value** - `string|number`
+* **width** - `string|number`
+
+### new ezhtml.Inserted()
+* **cite** - `string`
+* **datetime** - `string`
+    
+### new ezhtml.Italic()
+* None
+
+### new ezhtml.Keyboard()
+* None
+
+### new ezhtml.Label()
+* **for** - `string`
+* **form** - `string`
+    
+### new ezhtml.Legend()
+* None
+
+### new ezhtml.LineBreak()
+* None
+
+### new ezhtml.Link()
+* **crossorigin** - `string`
+* **href** - `string`
+* **hreflang** - `string`
+* **media** - `string`
+* **rel** - `string`
+* **sizes** - `string`
+* **type** - `string`
+    
+### new ezhtml.ListItem()
+* **value** - `number`
+    
+### new ezhtml.Main()
+* None
+
+### new ezhtml.Map()
+* **name** - `string`
+    
+### new ezhtml.Mark()
+* None
+    
+### new ezhtml.MenuItem()
+* **checked** - `boolean`
+* **command** - `string`
+* **default** - `boolean`
+* **disabled** - `boolean`
+* **icon** - `string`
+* **label** - `string`
+* **radiogroup** - `string`
+* **type** - `string`
+    
+### new ezhtml.Menu()
+* **label** - `string`
+* **type** - `string`
+    
+### new ezhtml.Meta()
+* **charset** - `string`
+* **content** - `string`
+* **http-equiv** - `string`
+* **name** - `string`
+    
+### new ezhtml.Meter()
+* **form** - `string`
+* **high** - `number`
+* **low** - `number`
+* **max** - `number`
+* **min** - `number`
+* **optimum** - `number`
+* **value** - `number`
+    
+### new ezhtml.MultimediaObject()
+* **data** - `string`
+* **form** - `string`
+* **height** - `number`
+* **name** - `string`
+* **type** - `string`
+* **usemap** - `boolean`
+* **width** - `number`
+    
+### new ezhtml.Nav()
+* None
+
+### new ezhtml.NoScript()
+* None
+
+### new ezhtml.OptionGroup()
+* **disabled** - `boolean`
+* **label** - `string`
+    
+### new ezhtml.Option()
+* **disabled** - `boolean`
+* **label** - `string`
+* **selected** - `boolean`
+* **value** - `string|number`
+    
+### new ezhtml.OrderedList()
+* **start** - `number`
+* **reversed** - `boolean`
+* **type** - `string`
+    
+### new ezhtml.Output()
+* **for** - `string`
+* **form** - `string`
+* **name** - `string`
+    
+### new ezhtml.Paragraph()
+* None
+
+### new ezhtml.Param()
+* **name** - `string`
+* **value** - `string`
+    
+### new ezhtml.Picture()
+* None
+
+### new ezhtml.PreformattedText()
+* None
+
+### new ezhtml.Progress()
+* **max** - `number`
+* **value** - `number`
+    
+### new ezhtml.Quotation()
+* **cite** - `string`
+    
+### new ezhtml.Sample()
+* None
+
+### new ezhtml.Script()
+* **async** - `boolean`
+* **charset** - `string`
+* **defer** - `boolean`
+* **src** - `string`
+* **type** - `string`
+    
+### new ezhtml.Section()
+* None
+
+### new ezhtml.Select()
+* **autofocus** - `boolean`
+* **disabled** - `boolean`
+* **form** - `string`
+* **multiple** - `boolean`
+* **name** - `string`
+* **required** - `boolean`
+* **size** - `string|number`
+    
+### new ezhtml.Small()
+* None
+
+### new ezhtml.Source()
+* **media** - `string`
+* **sizes** - `string`
+* **src** - `string`
+* **srcset** - `string`
+* **type** - `string`
+
+### new ezhtml.Span()
+* None
+
+### new ezhtml.Strikethrough()
+* None
+
+### new ezhtml.Strong()
+* None
+
+### new ezhtml.Style()
+* **media** - `string`
+* **scoped** - `boolean`
+* **type** - `string`
+    
+### new ezhtml.Subscript()
+* None
+
+### new ezhtml.Summary()
+* None
+
+### new ezhtml.Superscript()
+* None
+
+### new ezhtml.SVG()
+* **height** - `number`
+* **width** - `number`
+    
+### new ezhtml.TableBody()
+* None
+
+### new ezhtml.TableData()
+* **colspan** - `number`
+* **headers** - `string`
+* **rowspan** - `number`
+
+### new ezhtml.TableFooter()
+* None
+
+### new ezhtml.TableHead()
+* None
+
+### new ezhtml.TableHeader()
+* **abbr** - `string`
+* **colspan** - `number`
+* **headers** - `string`
+* **rowspan** - `number`
+* **scope** - `string`
+* **sorted** - `string`
+
+### new ezhtml.TableRow()
+* None
+
+### new ezhtml.Table()
+* None
+
+### new ezhtml.Template()
+* None
+
+### new ezhtml.TextArea()
+* **autofocus** - `boolean`
+* **cols** - `number`
+* **dirname** - `string`
+* **disabled** - `boolean`
+* **form** - `string`
+* **maxlength** - `number`
+* **name** - `string`
+* **placeholder** - `string`
+* **readonly** - `boolean`
+* **required** - `boolean`
+* **rows** - `number`
+* **wrap** - `string`
+    
+### new ezhtml.Text()
+* **text** - `string`
+
+### new ezhtml.Time()
+* **datetime** - `string`
+    
+### new ezhtml.Title()
+* None
+
+### new ezhtml.Track()
+* **default** - `boolean`
+* **kind** - `string`
+* **sizes** - `string`
+* **src** - `string`
+* **srclang** - `string`
+    
+### new ezhtml.Underline()
+* None
+
+### new ezhtml.UnorderedList()
+* None
+
+### new ezhtml.Variable()
+* None
+
+### new ezhtml.Video()
+* **autoplay** - `boolean`
+* **controls** - `boolean`
+* **height** - `number`
+* **loop** - `boolean`
+* **muted** - `boolean`
+* **poster** - `string`
+* **preload** - `string`
+* **src** - `string`
+* **width** - `number`
+    
+### new ezhtml.WordBreakOpportunity()
+* None
 
 ## Contributing
 
