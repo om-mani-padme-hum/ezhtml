@@ -1,4 +1,4 @@
-# EZHTML v1.0.7
+# EZ HTML v1.0.8
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -745,7 +745,7 @@ of elements and their HTML 5 properties is shown below:
 
 * **Parameter:** indent - `number` - (optional) Defaults to zero
 * **Description:** Get the rendered HTML of this element and all of its children, prepending
-all lines with optional `indent` spaces.
+all lines with optional `indent` number of spaces.
 
 ### tag()
 
@@ -753,7 +753,7 @@ all lines with optional `indent` spaces.
 
 ## Method Signatures Common to All Container Elements 
 
-This includes all elements that have closing tags `</element>`.
+This includes all elements that have closing tags, e.g. `</element>`.
 
 ### append(element)
 

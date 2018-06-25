@@ -11,10 +11,13 @@
     "url": "https://github.com/om-mani-padme-hum/ezhtml.git"
   },
   "keywords": [
+    "Programmatic",
+    "Generate",
+    "Render",
+    "Page",
     "HTML",
     "DOM",
     "JavaScript",
-    "Node",
     "EZHTML"
   ],
   "author": "Rich Lowe",
