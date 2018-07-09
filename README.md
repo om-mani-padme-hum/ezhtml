@@ -1,4 +1,4 @@
-# EZ HTML v1.0.9
+# EZ HTML v1.0.10
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -7,7 +7,7 @@ rather it provides the library of objects that will allow you to programatically
 functionalized web site design logic that will save you loads of time writing your own style of
 web sites.  This module was originally developed as the foundation for 
 [Strapped](https://github.com/om-mani-padme-hum/strapped) which seeks to provide a short-hand
-JavaScript impelementation of Bootstrap 4 web design.
+JavaScript implementation of Bootstrap 4 web design.
 
 * [Installation](#installation)
 * [Current Status](#current-status)
