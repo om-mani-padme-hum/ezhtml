@@ -120,7 +120,7 @@ const config = {
     { name: 'colspan', type: 'number' },
     { name: 'headers', type: 'string' },
     { name: 'rowspan', type: 'number' },
-    { name: 'scope', type: 'string' },
+    { name: 'scope', type: 'string', default: 'col' },
     { name: 'sorted', type: 'string' }
   ]
 };
