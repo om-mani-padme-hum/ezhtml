@@ -112,7 +112,7 @@
             Some inputs in a group:
           </legend>
           Name:
-          <input name='name' placeholder='Enter name' type='text'>
+          <input height=0 max=0 maxlength=0 min=0 name='name' placeholder='Enter name' step=0 type='text' value=0 width=0>
         </fieldset>
       </form>
       <br>
@@ -195,7 +195,7 @@
         NoScript text (only visible if JavaScript is disabled)
       </noscript>
       <br>
-      <select name='mySelect'>
+      <select name='mySelect' size=0>
         <optgroup label='Primary Options'>
           <option value=1>
             Primary Option 1
@@ -239,7 +239,7 @@
       </q>
       <br>
       <script>
-      $( document ).ready(() => {
+      $( document ).ready(async () => {
         alert(`This alert is part of a script created using a server side JavaScript function, it requires jQuery though!`);
       });
       </script>
@@ -278,13 +278,13 @@
       <table>
         <thead>
           <tr>
-            <th>
+            <th scope='col'>
               Header 1
             </th>
-            <th>
+            <th scope='col'>
               Header 2
             </th>
-            <th>
+            <th scope='col'>
               Header 3
             </th>
           </tr>
