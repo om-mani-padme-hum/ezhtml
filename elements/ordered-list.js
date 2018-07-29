@@ -74,7 +74,7 @@ const config = {
   extends: containerElement.ContainerElement,
   extendsConfig: containerElement.config,
   properties: [
-    { name: 'start', type: 'number' },
+    { name: 'start', type: 'int' },
     { name: 'reversed', type: 'boolean' },
     { name: 'type', type: 'string' }
   ]

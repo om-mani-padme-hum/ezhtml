@@ -270,3 +270,5 @@ div2.append(new ezhtml.Text().text('it, though who knows how it will come out on
 div2.append(new ezhtml.LineBreak());
 
 fs.writeFileSync('example.html', html.render());
+
+console.log(`Output written to example.html`);

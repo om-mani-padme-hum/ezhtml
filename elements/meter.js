@@ -131,12 +131,12 @@ const config = {
   extendsConfig: containerElement.config,
   properties: [
     { name: 'form', type: 'string' },
-    { name: 'high', type: 'number' },
-    { name: 'low', type: 'number' },
-    { name: 'max', type: 'number' },
-    { name: 'min', type: 'number' },
-    { name: 'optimum', type: 'number' },
-    { name: 'value', type: 'number' }
+    { name: 'high', type: 'int' },
+    { name: 'low', type: 'int' },
+    { name: 'max', type: 'int' },
+    { name: 'min', type: 'int' },
+    { name: 'optimum', type: 'int' },
+    { name: 'value', type: 'int' }
   ]
 };
 

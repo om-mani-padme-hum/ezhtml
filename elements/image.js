@@ -174,14 +174,14 @@ const config = {
   properties: [
     { name: 'alt', type: 'string' },
     { name: 'crossorigin', type: 'string' },
-    { name: 'height', type: 'number' },
+    { name: 'height', type: 'int' },
     { name: 'ismap', type: 'boolean' },
     { name: 'longdesc', type: 'string' },
     { name: 'sizes', type: 'string' },
     { name: 'src', type: 'string' },
     { name: 'srcset', type: 'string' },
     { name: 'usemap', type: 'string' },
-    { name: 'width', type: 'number' },
+    { name: 'width', type: 'int' },
   ]
 };
 

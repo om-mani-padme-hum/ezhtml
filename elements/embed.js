@@ -88,10 +88,10 @@ const config = {
   extends: element.Element,
   extendsConfig: element.config,
   properties: [
-    { name: 'height', type: 'number' },
+    { name: 'height', type: 'int' },
     { name: 'src', type: 'string' },
     { name: 'type', type: 'string' },
-    { name: 'width', type: 'number' }
+    { name: 'width', type: 'int' }
   ]
 };
 

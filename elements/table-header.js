@@ -117,9 +117,9 @@ const config = {
   extendsConfig: containerElement.config,
   properties: [
     { name: 'abbr', type: 'string' },
-    { name: 'colspan', type: 'number' },
+    { name: 'colspan', type: 'int' },
     { name: 'headers', type: 'string' },
-    { name: 'rowspan', type: 'number' },
+    { name: 'rowspan', type: 'int' },
     { name: 'scope', type: 'string', default: 'col' },
     { name: 'sorted', type: 'string' }
   ]

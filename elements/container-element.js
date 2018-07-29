@@ -76,12 +76,12 @@ const config = {
   extends: element.Element,
   extendsConfig: element.config,
   properties: [
-    { name: 'content', type: 'Array' }
+    { name: 'content', type: 'Array', arrayOf: { instanceOf: 'Child' } }
   ]
 };
 
 /** Create the class */
-ezobjects.createObject(config);
+ezobjects.createClass(config);
 
 /** Create additional prototype methods */
 ContainerElement.prototype.append = function (arg1) {

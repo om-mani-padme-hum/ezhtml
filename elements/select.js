@@ -136,7 +136,7 @@ const config = {
     { name: 'multiple', type: 'boolean' },
     { name: 'name', type: 'string' },
     { name: 'required', type: 'boolean' },
-    { name: 'size', type: 'string|number', setTransform: x => parseInt(x) }
+    { name: 'size', type: 'string', setTransform: x => parseInt(x) }
   ]
 };
 

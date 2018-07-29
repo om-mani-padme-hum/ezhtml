@@ -1,4 +1,4 @@
-# EZ HTML v1.1.0
+# EZ HTML v1.2.0
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -987,11 +987,11 @@ each have a getter of the form property(), and a setter of the form property(val
 * **formmethod** - `string`
 * **formnovalidate** - `boolean`
 * **formtarget** - `string`
-* **height** - `string|number`
+* **height** - `string`
 * **list** - `string`
-* **max** - `string|number`
-* **maxlength** - `string|number`
-* **min** - `string|number`
+* **max** - `string`
+* **maxlength** - `string`
+* **min** - `string`
 * **multiple** - `boolean`
 * **name** - `string`
 * **pattern** - `string`
@@ -1000,10 +1000,10 @@ each have a getter of the form property(), and a setter of the form property(val
 * **required** - `boolean`
 * **size** - `number`
 * **src** - `string`
-* **step** - `string|number`
+* **step** - `string`
 * **type** - `string` - Defaults to `text`
-* **value** - `string|number`
-* **width** - `string|number`
+* **value** - `string`
+* **width** - `string`
 
 ### new ezhtml.Inserted()
 * **cite** - `string`
@@ -1098,7 +1098,7 @@ each have a getter of the form property(), and a setter of the form property(val
 * **disabled** - `boolean`
 * **label** - `string`
 * **selected** - `boolean`
-* **value** - `string|number`
+* **value** - `string`
     
 ### new ezhtml.OrderedList()
 * **start** - `number`
@@ -1150,7 +1150,7 @@ each have a getter of the form property(), and a setter of the form property(val
 * **multiple** - `boolean`
 * **name** - `string`
 * **required** - `boolean`
-* **size** - `string|number`
+* **size** - `string`
     
 ### new ezhtml.Small()
 * None

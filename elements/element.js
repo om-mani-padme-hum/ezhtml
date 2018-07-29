@@ -39,7 +39,7 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @param key string
- * @param value string|number|boolean
+ * @param value string|boolean
  * @returns this
  * @description Add a new key/value attribute to the element.
  *
@@ -156,7 +156,7 @@ const config = {
   extends: child.Child,
   extendsConfig: child.config,
   properties: [
-    { name: 'attributes', type: 'Array' },
+    { name: 'attributes', type: 'Array', arrayOf: { type: 'string' } },
     { name: 'classes', type: 'string' },
     { name: 'id', type: 'string' },
     { name: 'lang', type: 'string' },
@@ -167,7 +167,7 @@ const config = {
 };
 
 /** Create the class */
-ezobjects.createObject(config);
+ezobjects.createClass(config);
 
 /** Create additional prototype methods */
 Element.prototype.addClass = function (arg1) {

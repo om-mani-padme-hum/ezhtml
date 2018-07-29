@@ -74,9 +74,9 @@ const config = {
   extends: containerElement.ContainerElement,
   extendsConfig: containerElement.config,
   properties: [
-    { name: 'colspan', type: 'number' },
+    { name: 'colspan', type: 'int' },
     { name: 'headers', type: 'string' },
-    { name: 'rowspan', type: 'number' }
+    { name: 'rowspan', type: 'int' }
   ]
 };
 

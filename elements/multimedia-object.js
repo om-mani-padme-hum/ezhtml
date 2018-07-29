@@ -132,11 +132,11 @@ const config = {
   properties: [
     { name: 'data', type: 'string' },
     { name: 'form', type: 'string' },
-    { name: 'height', type: 'number' },
+    { name: 'height', type: 'int' },
     { name: 'name', type: 'string' },
     { name: 'type', type: 'string' },
     { name: 'usemap', type: 'boolean' },
-    { name: 'width', type: 'number' }
+    { name: 'width', type: 'int' }
   ]
 };
 

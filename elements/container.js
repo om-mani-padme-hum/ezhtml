@@ -78,7 +78,7 @@ const config = {
 };
 
 /** Create the class */
-ezobjects.createObject(config);
+ezobjects.createClass(config);
 
 /** Create additional prototype methods */
 Container.prototype.append = function (arg1) {

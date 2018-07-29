@@ -46,7 +46,7 @@ const config = {
   extends: element.Element,
   extendsConfig: element.config,
   properties: [
-    { name: 'span', type: 'number' }
+    { name: 'span', type: 'int' }
   ]
 };
 

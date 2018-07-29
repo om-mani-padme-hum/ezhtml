@@ -9,7 +9,7 @@ const ezobjects = require('ezobjects');
  */
 module.exports.createClass = function (config) {  
   /** Create the class */
-  ezobjects.createObject(config);
+  ezobjects.createClass(config);
   
   /** Create the render function */
   global[config.className].prototype.render = function (indent = 0) {
@@ -17,13 +17,11 @@ module.exports.createClass = function (config) {
       if ( property.type == 'string' ) {
         if ( this[property.name]().length > 0 )
           this.attr(property.name, this[property.name]());
-      } else if ( property.type == 'number' ) {
+      } else if ( property.type == 'int' ) {
         if ( this[property.name]() > 0 )
           this.attr(property.name, this[property.name]());
-      } else if ( property.type.split(`|`).includes(`number`) && property.type.split(`|`).includes(`string`) ) {
-        if ( parseFloat(this[property.name]()) == this[property.name]() && this[property.name]() > 0 )
-          this.attr(property.name, parseFloat(this[property.name]()));
-        else
+      } else if ( property.type == 'float' ) {
+        if ( this[property.name]() > 0 )
           this.attr(property.name, this[property.name]());
       } else if ( property.type == 'boolean' ) {
         if ( this[property.name]() )

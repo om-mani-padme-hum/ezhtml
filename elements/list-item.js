@@ -48,7 +48,7 @@ const config = {
   extends: containerElement.ContainerElement,
   extendsConfig: containerElement.config,
   properties: [
-    { name: 'value', type: 'number' }
+    { name: 'value', type: 'int' }
   ]
 };
 

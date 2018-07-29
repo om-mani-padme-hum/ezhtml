@@ -60,8 +60,8 @@ const config = {
   extends: containerElement.ContainerElement,
   extendsConfig: containerElement.config,
   properties: [
-    { name: 'height', type: 'number' },
-    { name: 'width', type: 'number' }
+    { name: 'height', type: 'int' },
+    { name: 'width', type: 'int' }
   ]
 };
 

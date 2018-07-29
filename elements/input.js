@@ -234,9 +234,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.0
- * @param value string|number
+ * @param value string
  * @returns this
- * @throws TypeError if `value` is not a valid [string|number]
+ * @throws TypeError if `value` is not a valid [string]
  * @description Sets the maximum value for ths input.
  *
  * @signature maxlength()
@@ -249,9 +249,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.0
- * @param value string|number
+ * @param value string
  * @returns this
- * @throws TypeError if `value` is not a valid [string|number]
+ * @throws TypeError if `value` is not a valid [string]
  * @description Sets the maximum length of characters allowed for ths input.
  *
  * @signature min()
@@ -264,9 +264,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.0
- * @param value string|number
+ * @param value string
  * @returns this
- * @throws TypeError if `value` is not a valid [string|number]
+ * @throws TypeError if `value` is not a valid [string]
  * @description Sets the minimum value for ths input.
  *
  * @signature multiple()
@@ -369,9 +369,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.0
- * @param size string|number
+ * @param size string
  * @returns this
- * @throws TypeError if `size` is not a valid [string|number]
+ * @throws TypeError if `size` is not a valid [string]
  * @description Sets the size of this input in characters.
  *
  * @signature src()
@@ -398,9 +398,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.0
- * @param value string|number
+ * @param value string
  * @returns this
- * @throws TypeError if `value` is not a valid [string|number]
+ * @throws TypeError if `value` is not a valid [string]
  * @description Sets the step value for ths input.
  *
  * @signature type()
@@ -426,7 +426,7 @@
  * @signature value(value)
  * @added v0.1.0
  * @updated v0.2.0
- * @param value string|number
+ * @param value string
  * @returns this
  * @throws TypeError if `value` is not a valid [string] or [number]
  * @description Sets the initial value for ths input.
@@ -470,23 +470,23 @@ const config = {
     { name: 'formmethod', type: 'string' },
     { name: 'formnovalidate', type: 'boolean' },
     { name: 'formtarget', type: 'string' },
-    { name: 'height', type: 'string|number', setTransform: x => parseInt(x) },
+    { name: 'height', type: 'string', setTransform: x => parseInt(x) },
     { name: 'list', type: 'string' },
-    { name: 'max', type: 'string|number' },
-    { name: 'maxlength', type: 'string|number', setTransform: x => parseInt(x) },
-    { name: 'min', type: 'string|number' },
+    { name: 'max', type: 'string' },
+    { name: 'maxlength', type: 'string', setTransform: x => parseInt(x) },
+    { name: 'min', type: 'string' },
     { name: 'multiple', type: 'boolean' },
     { name: 'name', type: 'string' },
     { name: 'pattern', type: 'string' },
     { name: 'placeholder', type: 'string' },
     { name: 'readonly', type: 'boolean' },
     { name: 'required', type: 'boolean' },
-    { name: 'size', type: 'number', setTransform: x => parseInt(x) },
+    { name: 'size', type: 'int', setTransform: x => parseInt(x) },
     { name: 'src', type: 'string' },
-    { name: 'step', type: 'string|number', setTransform: x => parseInt(x) },
+    { name: 'step', type: 'string', setTransform: x => parseInt(x) },
     { name: 'type', type: 'string', default: 'text' },
-    { name: 'value', type: 'string|number' },
-    { name: 'width', type: 'string|number', setTransform: x => parseInt(x) }
+    { name: 'value', type: 'string' },
+    { name: 'width', type: 'string', setTransform: x => parseInt(x) }
   ]
 };
 

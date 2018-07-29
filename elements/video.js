@@ -160,13 +160,13 @@ const config = {
   properties: [
     { name: 'autoplay', type: 'boolean' },
     { name: 'controls', type: 'boolean' },
-    { name: 'height', type: 'number' },
+    { name: 'height', type: 'int' },
     { name: 'loop', type: 'boolean' },
     { name: 'muted', type: 'boolean' },
     { name: 'poster', type: 'string' },
     { name: 'preload', type: 'string' },
     { name: 'src', type: 'string' },
-    { name: 'width', type: 'number' }
+    { name: 'width', type: 'int' }
   ]
 };
 

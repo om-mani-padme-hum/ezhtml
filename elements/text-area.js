@@ -38,9 +38,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.2
- * @param columns string|number
+ * @param columns string
  * @returns this
- * @throws TypeError if `columns` is not a valid [string|number]
+ * @throws TypeError if `columns` is not a valid [string]
  * @description Sets the number of characters per row in the text area.
  *
  * @signature dirname()
@@ -95,9 +95,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.2
- * @param value string|number
+ * @param value string
  * @returns this
- * @throws TypeError if `value` is not a valid [string|number]
+ * @throws TypeError if `value` is not a valid [string]
  * @description Sets the maximum length of characters allowed for ths input.
  *
  * @signature name()
@@ -172,9 +172,9 @@
  * @added v0.1.0
  * @updated v0.2.0
  * @updated v0.3.2
- * @param value string|number
+ * @param value string
  * @returns this
- * @throws TypeError if `value` is not a valid [string|number]
+ * @throws TypeError if `value` is not a valid [string]
  * @description Sets the number of rows that should be visible in this text area at any given time.
  *
  * @signature wrap()
@@ -204,16 +204,16 @@ const config = {
   extendsConfig: containerElement.config,
   properties: [
     { name: 'autofocus', type: 'boolean' },
-    { name: 'cols', type: 'number' },
+    { name: 'cols', type: 'int' },
     { name: 'dirname', type: 'string' },
     { name: 'disabled', type: 'boolean' },
     { name: 'form', type: 'string' },
-    { name: 'maxlength', type: 'number' },
+    { name: 'maxlength', type: 'int' },
     { name: 'name', type: 'string' },
     { name: 'placeholder', type: 'string' },
     { name: 'readonly', type: 'boolean' },
     { name: 'required', type: 'boolean' },
-    { name: 'rows', type: 'number' },
+    { name: 'rows', type: 'int' },
     { name: 'wrap', type: 'string' }
   ]
 };

@@ -60,8 +60,8 @@ const config = {
   extends: containerElement.ContainerElement,
   extendsConfig: containerElement.config,
   properties: [
-    { name: 'max', type: 'number' },
-    { name: 'value', type: 'number' }
+    { name: 'max', type: 'int' },
+    { name: 'value', type: 'int' }
   ]
 };
 

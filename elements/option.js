@@ -71,7 +71,7 @@
  * @signature value(value)
  * @added v0.1.0
  * @updated v0.2.0
- * @param value string|number
+ * @param value string
  * @returns this
  * @throws TypeError if `value` is not a valid [string] or [number]
  * @description Sets the value of ths option.
@@ -91,7 +91,7 @@ const config = {
     { name: 'disabled', type: 'boolean' },
     { name: 'label', type: 'string' },
     { name: 'selected', type: 'boolean' },
-    { name: 'value', type: 'string|number' }
+    { name: 'value', type: 'string' }
   ]
 };
 
