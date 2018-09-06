@@ -156,7 +156,7 @@ const config = {
   extends: child.Child,
   extendsConfig: child.config,
   properties: [
-    { name: 'attributes', type: 'Array', arrayOf: { type: 'string' } },
+    { name: 'attributes', type: 'Array', arrayOf: { type: 'Object' } },
     { name: 'classes', type: 'string' },
     { name: 'id', type: 'string' },
     { name: 'lang', type: 'string' },
