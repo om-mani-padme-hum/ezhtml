@@ -15,7 +15,7 @@ module.exports.createClass = function (config) {
   global[config.className].prototype.render = function (indent = 0) {
     config.properties.forEach((property) => {
       if ( property.type == 'string' ) {
-        if ( this[property.name]().length > 0 )
+        if ( this[property.name]().length > 0 || ( config.className == `Option` && property.name == `value` ) )
           this.attr(property.name, this[property.name]());
       } else if ( property.type == 'int' ) {
         if ( this[property.name]() > 0 )
