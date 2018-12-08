@@ -1,4 +1,4 @@
-# EZ HTML v1.2.2
+# EZ HTML v1.3.0
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -729,8 +729,24 @@ of elements and their HTML 5 properties is shown below:
 ### Element.attr(name, value)
 
 * **Parameter:** name - `string`
-* **Parameter:** value - `string`|`number`|`boolean`
+* **Parameter:** value - `string`|`number`
 * **Description:** Set the the attribute named `name` to `value`.
+
+### Element.id()
+
+* **Description:** Get the value of the element's id attribute.
+
+### Element.id(value)
+
+* **Parameter:** value - `string`|`number`
+* **Description:** Set the the element's id attribute to `value`.
+
+### Element.name()
+* **Description:** Get the value of the element's name attribute.
+
+### Element.name(value)
+* **Parameter:** value - `string`|`number`
+* **Description:** Set the the element's name attribute to `value`.
 
 ### Element.removeClass(class)
 
@@ -1040,7 +1056,7 @@ each have a getter of the form property(), and a setter of the form property(val
 ### new ezhtml.Main()
 * None
 
-### new ezhtml.Map()
+### new ezhtml.MapElement()
 * **name** - `string`
     
 ### new ezhtml.Mark()

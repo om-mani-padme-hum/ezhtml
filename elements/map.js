@@ -1,5 +1,5 @@
 /**
- * @class ezhtml.Map
+ * @class ezhtml.MapElement
  * @extends ContainerElement
  * @added v0.1.0
  * @updated v0.2.0
@@ -7,11 +7,11 @@
  * @copyright 2018 Rich Lowe
  * @description Class for rendering HTML map elements.
  *
- * @signature new Map([data])
+ * @signature new MapElement([data])
  * @added v0.1.0
  * @param data Object
- * @returns Map
- * @description Returns a new [Map] instance, initializing with any key/value pairs provided in `data` with keys 
+ * @returns MapElement
+ * @description Returns a new [MapElement] instance, initializing with any key/value pairs provided in `data` with keys 
  * that match setter method names.
  *
  * @signature name()
@@ -41,7 +41,7 @@ const ezelement = require('../ezelement');
 
 /** Create the ezelement class configuration */
 const config = {
-  className: 'Map',
+  className: 'MapElement',
   tag: 'map',
   extends: containerElement.ContainerElement,
   extendsConfig: containerElement.config,
@@ -54,5 +54,5 @@ const config = {
 ezelement.createClass(config);
 
 /** Export the class and class config */
-module.exports.Map = Map;
+module.exports.MapElement = MapElement;
 module.exports.config = config;
