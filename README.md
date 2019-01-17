@@ -1,4 +1,4 @@
-# EZ HTML v1.3.0
+# EZ HTML v1.3.1
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -23,7 +23,7 @@ JavaScript implementation of Bootstrap 4 web design.
 
 ## Installation
 
-`npm install --save ezhtml`
+`npm install ezhtml`
 
 ## Current Status
 

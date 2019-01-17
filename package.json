@@ -32,9 +32,9 @@
     }
   },
   "devDependencies": {
-    "docket-parser": "^0.6.7"
+    "docket-parser": "^0.7.0"
   },
   "dependencies": {
-    "ezobjects": "^5.4.1"
+    "ezobjects": "^5.4.4"
   }
 }
