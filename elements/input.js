@@ -470,10 +470,10 @@ const config = {
     { name: 'formmethod', type: 'string' },
     { name: 'formnovalidate', type: 'boolean' },
     { name: 'formtarget', type: 'string' },
-    { name: 'height', type: 'string', setTransform: x => parseInt(x) },
+    { name: 'height', type: 'string' },
     { name: 'list', type: 'string' },
     { name: 'max', type: 'string' },
-    { name: 'maxlength', type: 'string', setTransform: x => parseInt(x) },
+    { name: 'maxlength', type: 'string' },
     { name: 'min', type: 'string' },
     { name: 'multiple', type: 'boolean' },
     { name: 'name', type: 'string' },
@@ -481,12 +481,12 @@ const config = {
     { name: 'placeholder', type: 'string' },
     { name: 'readonly', type: 'boolean' },
     { name: 'required', type: 'boolean' },
-    { name: 'size', type: 'int', setTransform: x => parseInt(x) },
+    { name: 'size', type: 'int' },
     { name: 'src', type: 'string' },
-    { name: 'step', type: 'string', setTransform: x => parseInt(x) },
+    { name: 'step', type: 'string' },
     { name: 'type', type: 'string', default: 'text' },
     { name: 'value', type: 'string' },
-    { name: 'width', type: 'string', setTransform: x => parseInt(x) }
+    { name: 'width', type: 'string' }
   ]
 };
 
