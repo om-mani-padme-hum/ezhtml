@@ -1,4 +1,4 @@
-# EZ HTML v1.4.0
+# EZ HTML v1.4.1
 
 This Node.js module is designed to be a simple API for programatically rendering HTML 5
 web pages.  It outputs clean, formatted code, making it easy to troubleshoot errors and verify
@@ -9,8 +9,7 @@ development.
 
 * [Installation](#installation)
 * [Current Status](#current-status)
-* [Basic Example](#basic-example)
-* [Included Examples](#basic-example-method-1)
+* [Examples](#basic-example---method-1)
 * [Usage](#usage)
 * [The Page Class](#the-page-class)
 * [Method Signatures Common to All Elements](#method-signatures-common-to-all-elements)
