@@ -74,10 +74,7 @@ const text = require('./text');
 const config = {
   className: 'ContainerElement',
   extends: element.Element,
-  extendsConfig: element.config,
-  properties: [
-    { name: 'content', type: 'Array', arrayOf: { instanceOf: 'Child' } }
-  ]
+  extendsConfig: element.config
 };
 
 /** Create the class */
@@ -101,10 +98,40 @@ ContainerElement.prototype.append = function (arg1) {
   return this;
 };
 
+ContainerElement.prototype.content = function (arg1) {
+  if ( typeof this._content === `undefined` )
+    this._content = [];
+  
+  /** Getter */
+  if ( arg1 === undefined )
+    return this._content;
+
+  /** Setter */
+  else if ( typeof arg1 == 'object' && arg1.constructor.name == 'Array' )
+    this._content = arg1; 
+
+  /** Handle errors */
+  else if ( arg1 === null )
+    throw new TypeError(`${this.constructor.name}.content(null): Invalid signature.`);
+  else
+    throw new TypeError(`${this.constructor.name}.content(${arg1.constructor.name}): Invalid signature.`);
+
+  /** Set parent for all items */
+  const parent = this;
+
+  this._content.forEach((item) => {
+    if ( typeof item != 'function' )
+      item.parent(parent);
+  });
+
+  /** Allow for call chaining */
+  return this;
+};
+
 ContainerElement.prototype.prepend = function (arg1) {
   /** Setter */
   if ( typeof arg1 == 'object' || typeof arg1 == 'function' )
-    this._content.unshift(arg1);
+    this.content().unshift(arg1);
 
   /** Handle errors */
   else if ( arg1 === null )

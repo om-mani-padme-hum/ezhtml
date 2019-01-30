@@ -84,7 +84,7 @@ ezobjects.createClass(config);
 Container.prototype.append = function (arg1) {
   /** Setter */
   if ( typeof arg1 == 'object' || typeof arg1 == 'function' )
-    this._content.push(arg1);
+    this.content().push(arg1);
 
   /** Handle errors */
   else
@@ -99,6 +99,9 @@ Container.prototype.append = function (arg1) {
 };
 
 Container.prototype.content = function (arg1) {
+  if ( typeof this._content === `undefined` )
+    this._content = [];
+  
   /** Getter */
   if ( arg1 === undefined )
     return this._content;
@@ -128,7 +131,7 @@ Container.prototype.content = function (arg1) {
 Container.prototype.prepend = function (arg1) {
   /** Setter */
   if ( typeof arg1 == 'object' || typeof arg1 == 'function' )
-    this._content.unshift(arg1);
+    this.content().unshift(arg1);
 
   /** Handle errors */
   else if ( arg1 === null )
@@ -145,6 +148,8 @@ Container.prototype.prepend = function (arg1) {
 };
 
 Container.prototype.render = function (indent = 0) {
+  let markup = ``;
+  
   /** Mark up any content in this container */
   this.content().forEach((content) => {
     if ( typeof content == 'function' ) {

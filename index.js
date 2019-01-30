@@ -1,5 +1,6 @@
 /** Require local modules */
 const elements = require('./elements');
+const page = require(`./page`);
 
 /** 
  * @module ezhtml
@@ -82,6 +83,7 @@ module.exports.OptionGroup = elements.OptionGroup;
 module.exports.Option = elements.Option;
 module.exports.OrderedList = elements.OrderedList;
 module.exports.Output = elements.Output;
+module.exports.Page = page.Page;
 module.exports.Paragraph = elements.Paragraph;
 module.exports.Param = elements.Param;
 module.exports.Picture = elements.Picture;

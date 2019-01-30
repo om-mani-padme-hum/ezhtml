@@ -4,13 +4,13 @@ const fileList = ['ezelement.js', 'index.js', 'elements/abbreviation.js', 'eleme
                   'elements/aside.js', 'elements/audio.js', 'elements/base.js', 'elements/bidirectional-isolation.js', 'elements/bidirectional-override.js', 
                   'elements/blockquote.js', 'elements/body.js', 'elements/bold.js', 'elements/button.js', 'elements/canvas.js', 'elements/caption.js', 
                   'elements/child.js', 'elements/citation.js', 'elements/code.js', 'elements/column-group.js', 'elements/column.js', 'elements/container-element.js', 
-                  'elements/container.js', 'elements/data-list.js', 'elements/definition-description.js', 'elements/definition-list.js', 
+                  'elements/container.js', 'elements/data.js', 'elements/data-list.js', 'elements/definition-description.js', 'elements/definition-list.js', 
                   'elements/definition-term.js', 'elements/definition.js', 'elements/deleted.js', 'elements/details.js', 'elements/dialog.js', 'elements/div.js', 
                   'elements/element.js', 'elements/embed.js', 'elements/emphasized.js', 'elements/fieldset.js', 'elements/figure-caption.js', 
-                  'elements/figure.js', 'elements/footer.js', 'elements/form.js', 'elements/head.js', 'elements/header.js', 'elements/heading-group.js', 
+                  'elements/figure.js', 'elements/footer.js', 'elements/form.js', 'elements/head.js', 'elements/header.js',
                   'elements/headings.js', 'elements/horizontal-rule.js', 'elements/html.js', 'elements/image.js', 'elements/input.js', 'elements/inserted.js', 
                   'elements/italic.js', 'elements/keyboard.js', 'elements/label.js', 'elements/legend.js', 'elements/line-break.js', 'elements/link.js', 
-                  'elements/list-item.js', 'elements/main.js', 'elements/map.js', 'elements/mark.js', 'elements/menu-item.js', 'elements/menu.js', 'elements/meta.js', 
+                  'elements/list-item.js', 'elements/main.js', 'elements/map.js', 'elements/mark.js', 'elements/meta.js', 
                   'elements/meter.js', 'elements/multimedia-object.js', 'elements/nav.js', 'elements/no-script.js', 'elements/option-group.js', 'elements/option.js', 
                   'elements/ordered-list.js', 'elements/output.js', 'elements/paragraph.js', 'elements/param.js', 'elements/picture.js', 'elements/preformatted-text.js', 
                   'elements/progress.js', 'elements/quotation.js', 'elements/sample.js', 'elements/script.js', 'elements/section.js', 'elements/select.js', 'elements/small.js', 
@@ -18,9 +18,9 @@ const fileList = ['ezelement.js', 'index.js', 'elements/abbreviation.js', 'eleme
                   'elements/summary.js', 'elements/superscript.js', 'elements/svg.js', 'elements/table-body.js', 'elements/table-data.js', 'elements/table-footer.js', 
                   'elements/table-head.js', 'elements/table-header.js', 'elements/table-row.js', 'elements/table.js', 'elements/template.js', 'elements/text-area.js', 
                   'elements/text.js', 'elements/time.js', 'elements/title.js', 'elements/track.js', 'elements/underline.js', 'elements/unordered-list.js', 'elements/variable.js', 
-                  'elements/video.js', 'elements/word-break-opportunity.js', ];
+                  'elements/video.js', 'elements/word-break-opportunity.js', 'page.js'];
 
-docket.title('EZ HTML v1.3.2 Documentation');
+docket.title('EZ HTML v1.4.0 Documentation');
 docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
