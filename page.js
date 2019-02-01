@@ -1,10 +1,34 @@
 /** Require local modules */
 const elements = require(`./elements`);
 
+/**
+ * @class ezhtml.Page
+ * @extends Container
+ * @added v1.4.0
+ * @author Rich Lowe
+ * @copyright 2018 Rich Lowe
+ * @description Class for rendering HTML elements using short-hand methods and auto-nesting.
+ *
+ * @signature render(indent) 
+ * @added v1.4.0
+ * @param indent number
+ * @return string Rendered HTML
+ * @description Render this page with `indent` spaces of indentation before each line.
+ */
 class Page extends elements.Container {
+  /**
+   * @signature new Page(template)
+   * @added v1.4.0
+   * @param template boolean
+   * @returns Page
+   * @description Returns a new [Page] instance, initializing with <html>, <head>, and <body>
+   * tags already included unless `false` is passed to the constructor.
+   */
   constructor(template = true) {
+    /** Call parent constructor */
     super();
-        
+    
+    /** Initialize content */
     this.init();
     
     /** If we're going to template the HTML, head, and body tags... */
@@ -29,6 +53,14 @@ class Page extends elements.Container {
     }
   }
   
+  /**
+   * @signature abbreviation()
+   * @added v1.4.0
+   * @param nest string|Array
+   * @returns Abbreviation
+   * @description Returns a new [Abbreviation] instance, nesting inside the most recent
+   * <div> element, if one exists, otherwise the <body> element.
+   */
   abbreviation(nest = [`div`, `body`]) {
     /** Create element */
     const abbreviation = new elements.Abbreviation();
@@ -40,6 +72,15 @@ class Page extends elements.Container {
     return abbreviation;
   }
   
+  /**
+   * @signature abbreviation(nest)
+   * @added v1.4.0
+   * @param nest string|Array
+   * @returns Abbreviation
+   * @description Returns a new [Abbreviation] instance, nesting inside the most recent
+   * element specified by the string or string elements of `nest`, if provided, otherwise
+   * the most recent <div> element, if one exists, otherwise the <body> element.
+   */
   address(nest = [`div`, `body`]) {
     /** Create element */
     const address = new elements.Address();
@@ -51,6 +92,15 @@ class Page extends elements.Container {
     return address;
   }
   
+  /**
+   * @signature anchor(nest)
+   * @added v1.4.0
+   * @param nest string|Array<string>
+   * @returns Anchor
+   * @description Returns a new [Anchor] instance, nesting inside the most recent
+   * element specified by the string or string elements of `nest`, if provided, otherwise
+   * the most recent <div> element, if one exists, otherwise the <body> element.
+   */
   anchor(nest = [`div`, `body`]) {
     /** Create element */
     const anchor = new elements.Anchor();
@@ -62,6 +112,15 @@ class Page extends elements.Container {
     return anchor;
   }
   
+  /**
+   * @signature area(nest)
+   * @added v1.4.0
+   * @param nest string|Array<string>
+   * @returns Area
+   * @description Returns a new [Area] instance, nesting inside the most recent
+   * element specified by the string or string elements of `nest`, if provided, otherwise
+   * the most recent <map> element.
+   */
   area(nest = [`mapelement`]) {
     /** Create element */
     const area = new elements.Area();
@@ -73,6 +132,16 @@ class Page extends elements.Container {
     return area;
   }
   
+  /**
+   * @signature article()
+   * @added v1.4.0
+   * @param nest string|Array<string>
+   * @returns Article
+   * @description Returns a new [Article] instance, nesting inside the most recent
+   * element specified by the string or string elements of `nest`, if provided, otherwise
+   * the most recent <div>, <main>, or <aside> element, if one exists, otherwise the 
+   * <body> element.
+   */
   article(nest = [`div`, `main`, `aside`, `body`]) {
     /** Create element */
     const article = new elements.Article();
@@ -84,7 +153,16 @@ class Page extends elements.Container {
     return article;
   }
   
-  aside(nest = [`body`]) {
+  /**
+   * @signature aside()
+   * @added v1.4.0
+   * @param nest string|Array<string>
+   * @returns Aside
+   * @description Returns a new [Aside] instance, nesting inside the most recent
+   * element specified by the string or string elements of `nest`, if provided, otherwise
+   * the most recent <div> element, if one exists, otherwise the <body> element.
+   */
+  aside(nest = [`div`, `body`]) {
     /** Create element */
     const aside = new elements.Aside();
     
@@ -1179,7 +1257,7 @@ class Page extends elements.Container {
     return tableHead;
   }
   
-  tableHeader(nest = [`tablehead`]) {
+  tableHeader(nest = [`tablerow`]) {
     /** Create element */
     const tableHeader = new elements.TableHeader();
     

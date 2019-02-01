@@ -12,15 +12,15 @@ const fileList = ['ezelement.js', 'index.js', 'elements/abbreviation.js', 'eleme
                   'elements/italic.js', 'elements/keyboard.js', 'elements/label.js', 'elements/legend.js', 'elements/line-break.js', 'elements/link.js', 
                   'elements/list-item.js', 'elements/main.js', 'elements/map.js', 'elements/mark.js', 'elements/meta.js', 
                   'elements/meter.js', 'elements/multimedia-object.js', 'elements/nav.js', 'elements/no-script.js', 'elements/option-group.js', 'elements/option.js', 
-                  'elements/ordered-list.js', 'elements/output.js', 'elements/paragraph.js', 'elements/param.js', 'elements/picture.js', 'elements/preformatted-text.js', 
+                  'elements/ordered-list.js', 'elements/output.js', 'page.js', 'elements/paragraph.js', 'elements/param.js', 'elements/picture.js', 'elements/preformatted-text.js', 
                   'elements/progress.js', 'elements/quotation.js', 'elements/sample.js', 'elements/script.js', 'elements/section.js', 'elements/select.js', 'elements/small.js', 
                   'elements/source.js', 'elements/span.js', 'elements/strikethrough.js', 'elements/strong.js', 'elements/style.js', 'elements/subscript.js', 
                   'elements/summary.js', 'elements/superscript.js', 'elements/svg.js', 'elements/table-body.js', 'elements/table-data.js', 'elements/table-footer.js', 
                   'elements/table-head.js', 'elements/table-header.js', 'elements/table-row.js', 'elements/table.js', 'elements/template.js', 'elements/text-area.js', 
                   'elements/text.js', 'elements/time.js', 'elements/title.js', 'elements/track.js', 'elements/underline.js', 'elements/unordered-list.js', 'elements/variable.js', 
-                  'elements/video.js', 'elements/word-break-opportunity.js', 'page.js'];
+                  'elements/video.js', 'elements/word-break-opportunity.js'];
 
-docket.title('EZ HTML v1.4.1 Documentation');
+docket.title('EZ HTML v1.4.2 Documentation');
 docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');
