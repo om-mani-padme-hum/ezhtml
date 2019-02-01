@@ -89,7 +89,6 @@ const config = {
   extendsConfig: containerElement.config,
   properties: [
     { name: 'disabled', type: 'boolean' },
-    { name: 'label', type: 'string' },
     { name: 'selected', type: 'boolean' },
     { name: 'value', type: 'string' }
   ]
