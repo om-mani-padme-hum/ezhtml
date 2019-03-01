@@ -1,6 +1,6 @@
 const docket = require('docket-parser');
 
-const fileList = ['ezelement.js', 'index.js', 'elements/abbreviation.js', 'elements/address.js', 'elements/anchor.js', 'elements/area.js', 'elements/article.js', 
+const fileList = ['index.js', 'ezelement.js', 'elements/abbreviation.js', 'elements/address.js', 'elements/anchor.js', 'elements/area.js', 'elements/article.js', 
                   'elements/aside.js', 'elements/audio.js', 'elements/base.js', 'elements/bidirectional-isolation.js', 'elements/bidirectional-override.js', 
                   'elements/blockquote.js', 'elements/body.js', 'elements/bold.js', 'elements/button.js', 'elements/canvas.js', 'elements/caption.js', 
                   'elements/child.js', 'elements/citation.js', 'elements/code.js', 'elements/column-group.js', 'elements/column.js', 'elements/container-element.js', 
@@ -20,7 +20,7 @@ const fileList = ['ezelement.js', 'index.js', 'elements/abbreviation.js', 'eleme
                   'elements/text.js', 'elements/time.js', 'elements/title.js', 'elements/track.js', 'elements/underline.js', 'elements/unordered-list.js', 'elements/variable.js', 
                   'elements/video.js', 'elements/word-break-opportunity.js'];
 
-docket.title('EZ HTML v1.4.2 Documentation');
+docket.title('EZ HTML v1.4.4 Documentation');
 docket.linkClass('text-success');
 docket.parseFiles(fileList);
 docket.generateDocs('docs');

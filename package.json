@@ -32,7 +32,7 @@
     }
   },
   "devDependencies": {
-    "docket-parser": "^0.7.0",
+    "docket-parser": "^0.7.1",
     "express": "^4.16.4"
   },
   "dependencies": {
