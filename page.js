@@ -567,7 +567,7 @@ class Page extends elements.Container {
         items.push(currentElement);
       
       /** If current element has contents... */
-      if ( typeof currentElement.content == `function` ) {
+      if ( typeof currentElement.content == `function` && currentElement.content().constructor.name == `Array` ) {
         /** Loop through them and recursively search for matching elemenets */
         currentElement.content().forEach((element) => {
           findElements(element);
@@ -600,7 +600,7 @@ class Page extends elements.Container {
         items.push(currentElement);
       
       /** If current element has contents... */
-      if ( typeof currentElement.content == `function` ) {
+      if ( typeof currentElement.content == `function` && currentElement.content().constructor.name == `Array` ) {
         /** Loop through them and recursively search for matching elemenets */
         currentElement.content().forEach((element) => {
           findElements(element);
