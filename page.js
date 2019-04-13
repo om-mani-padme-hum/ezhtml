@@ -353,7 +353,7 @@ class Page extends elements.Container {
           throw new TypeError(`Page.container(): Container name contains a period '.', but invalid number '${partsCount[0]}' preceeding period.`);
         
         count = parseInt(partsCount[0]);
-        name = parseCount[1];
+        name = partsCount[1];
       }
       
       /** Attempt to split item by colon */
