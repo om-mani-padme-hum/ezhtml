@@ -150,7 +150,7 @@ ContainerElement.prototype.prepend = function (arg1) {
 ContainerElement.prototype.render = function (indent = 0) {  
   /** Mark up this element's opening (or only) tag */
   let markup = element.Element.prototype.render.call(this, indent);
-
+  
   /** Mark up any content of this element */
   this.content().forEach((content) => {
     if ( typeof content == 'function' ) {
