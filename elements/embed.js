@@ -96,7 +96,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Embed = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Embed = Embed;

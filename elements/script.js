@@ -111,7 +111,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Script = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Script = Script;

@@ -33,7 +33,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Superscript = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Superscript = Superscript;

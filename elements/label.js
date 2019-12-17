@@ -66,7 +66,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Label = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Label = Label;

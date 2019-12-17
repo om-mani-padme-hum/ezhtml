@@ -167,7 +167,7 @@ const config = {
 };
 
 /** Create the class */
-ezobjects.createClass(config);
+const Element = ezobjects.createClass(config);
 
 /** Create additional prototype methods */
 Element.prototype.addClass = function (arg1) {

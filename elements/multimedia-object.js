@@ -141,7 +141,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const MultimediaObject = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.MultimediaObject = MultimediaObject;

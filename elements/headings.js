@@ -140,9 +140,9 @@ for ( let i = 1, i_max = 6; i <= i_max; i++ ) {
   };
 
   /** Create the class */
-  ezelement.createClass(config);
+  const Heading = ezelement.createClass(config);
 
   /** Export the class and class config */
-  module.exports[`H${i}`] = global[`H${i}`];
+  module.exports[`H${i}`] = Heading;
   module.exports[`configH${i}`] = config;
 }

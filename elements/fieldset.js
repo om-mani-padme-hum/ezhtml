@@ -81,7 +81,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const FieldSet = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.FieldSet = FieldSet;

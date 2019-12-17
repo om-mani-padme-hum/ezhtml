@@ -491,7 +491,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Input = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Input = Input;

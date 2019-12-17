@@ -33,7 +33,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Section = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Section = Section;

@@ -36,7 +36,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Data = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Data = Data;

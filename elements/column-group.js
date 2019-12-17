@@ -51,7 +51,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const ColumnGroup = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.ColumnGroup = ColumnGroup;

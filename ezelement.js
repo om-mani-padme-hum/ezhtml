@@ -9,10 +9,10 @@ const ezobjects = require('ezobjects');
  */
 module.exports.createClass = function (config) {  
   /** Create the class */
-  ezobjects.createClass(config);
+  const Element = ezobjects.createClass(config);
   
   /** Create the render function */
-  global[config.className].prototype.render = function (indent = 0) {
+  Element.prototype.render = function (indent = 0) {
     config.properties.forEach((property) => {
       if ( property.type == 'string' ) {
         if ( this[property.name]().length > 0 || ( config.className == `Option` && property.name == `value` ) )
@@ -31,6 +31,8 @@ module.exports.createClass = function (config) {
     
     this.tag(config.tag);
 
-    return global[config.extendsConfig.className].prototype.render.call(this, indent);
+    return Element.__proto__.prototype.render.call(this, indent);
   };
+  
+  return Element;
 };

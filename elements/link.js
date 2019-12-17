@@ -141,7 +141,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Link = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Link = Link;

@@ -95,7 +95,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Option = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Option = Option;

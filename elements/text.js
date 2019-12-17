@@ -52,7 +52,7 @@ const config = {
 };
 
 /** Create the class */
-ezobjects.createClass(config);
+const Text = ezobjects.createClass(config);
 
 /** Create additional prototype methods */
 Text.prototype.render = function (indent) {

@@ -83,7 +83,7 @@ const config = {
 };
 
 /** Create the class */
-ezelement.createClass(config);
+const Style = ezelement.createClass(config);
 
 /** Export the class and class config */
 module.exports.Style = Style;
