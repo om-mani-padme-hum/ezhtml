@@ -153,7 +153,7 @@ Container.prototype.render = function (indent = 0) {
   /** Mark up any content in this container */
   this.content().forEach((content) => {
     if ( typeof content == 'function' ) {
-      markup += ' '.repeat(indent) + '$( document ).ready(() => {\n';
+      markup += ' '.repeat(indent) + '$( document ).ready(async () => {\n';
       markup += ' '.repeat(indent) + content.toString().split('\n').slice(1, -1).join('\n' + ' '.repeat(indent + 2)) + '\n';
       markup += ' '.repeat(indent) + '});\n';
     } else if ( this.constructor.name == 'TextArea' || this.constructor.name == 'PreformattedText' ) {
