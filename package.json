@@ -11,11 +11,12 @@
     "url": "https://github.com/om-mani-padme-hum/ezhtml.git"
   },
   "keywords": [
+    "HTML",
+    "API",
+    "Render",
     "Programmatic",
     "Generate",
-    "Render",
     "Page",
-    "HTML",
     "DOM",
     "JavaScript",
     "EZHTML"
@@ -32,10 +33,10 @@
     }
   },
   "devDependencies": {
-    "docket-parser": "^0.7.2",
-    "express": "^4.16.4"
+    "docket-parser": "^0.7.4",
+    "express": "^4.17.1"
   },
   "dependencies": {
-    "ezobjects": "^6.0.0"
+    "ezobjects": "^6.0.1"
   }
 }
