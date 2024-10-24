@@ -91,6 +91,7 @@ const config = {
     { name: 'charset', type: 'string' },
     { name: 'content', type: 'string' },
     { name: 'http-equiv', type: 'string' },
+    { name: 'integrity', type: 'string' },
     { name: 'name', type: 'string' }
   ]
 };
