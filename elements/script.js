@@ -104,6 +104,7 @@ const config = {
   properties: [
     { name: 'async', type: 'boolean' },
     { name: 'charset', type: 'string' },
+    { name: 'crossorigin', type: 'string' },
     { name: 'defer', type: 'boolean' },
     { name: 'integrity', type: 'string' },
     { name: 'src', type: 'string' },
