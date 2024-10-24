@@ -133,7 +133,7 @@ const config = {
     { name: 'crossorigin', type: 'string' },
     { name: 'href', type: 'string' },
     { name: 'hreflang', type: 'string' },
-    { name: 'integrity', type: 'string' ),
+    { name: 'integrity', type: 'string' },
     { name: 'media', type: 'string' },
     { name: 'rel', type: 'string' },
     { name: 'sizes', type: 'string' },
