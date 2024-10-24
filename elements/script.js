@@ -105,6 +105,7 @@ const config = {
     { name: 'async', type: 'boolean' },
     { name: 'charset', type: 'string' },
     { name: 'defer', type: 'boolean' },
+    { name: 'integrity', type: 'string' },
     { name: 'src', type: 'string' },
     { name: 'type', type: 'string' }
   ]
